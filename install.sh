@@ -10,7 +10,7 @@
 dir=~/.dotfiles                    # dotfiles directory
 olddir=$(TMPDIR=~ mktemp -d -t .dotfiles) # old dotfiles backup directory
 # list of files/folders to symlink in homedir
-files="$(ls $PWD|grep -v install.sh| grep -v README.md)"
+files="$(ls $PWD|grep -v install.sh| grep -v README.md | grep -v config)"
 ##########
 
 # create dotfiles_old in homedir
@@ -28,5 +28,9 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+# Special case .config for lazyness preventing touching other apps
+mkdir -p ~/.config/awesome
+cp -a config/awesome/rc.lua ~/.config/awesome/
 
 echo "Please delete backup $olddir if everything is fine."
