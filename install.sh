@@ -24,7 +24,7 @@ mkdir -p $dir && echo "Created $dir for for new dotfiles linked from ~."
 echo "Moving any existing dotfiles from ~ to $olddir"
 for file in $files; do
     cp -a $file $dir/
-    mv -f ~/.$file $olddir
+    test -f ~/.$file && mv -f ~/.$file $olddir
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
