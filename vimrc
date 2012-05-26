@@ -1,3 +1,5 @@
+set nocompatible
+set t_Co=256
 syntax on
 let moria_style = 'black' 
 colorscheme moria
