@@ -8,7 +8,7 @@
 ########## Variables
 
 dir=~/.dotfiles                    # dotfiles directory
-olddir=~/.dotfiles_old             # old dotfiles backup directory
+olddir=$(TMPDIR=~ mktemp -d -t .dotfiles) # old dotfiles backup directory
 # list of files/folders to symlink in homedir
 files="$(ls $PWD|grep -v install.sh| grep -v README.md)"
 ##########
@@ -23,7 +23,10 @@ mkdir -p $dir && echo "Created $dir for for new dotfiles linked from ~."
 # symlinks
 echo "Moving any existing dotfiles from ~ to $olddir"
 for file in $files; do
-    mv ~/.$file $olddir
+    cp -a $file $dir/
+    mv -f ~/.$file $olddir
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+echo "Please delete backup $olddir if everything is fine."
