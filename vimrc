@@ -1,4 +1,5 @@
 call pathogen#infect()
+call pathogen#helptags()
 set nocompatible
 filetype plugin on
 set t_Co=256
