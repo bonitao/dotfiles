@@ -1,6 +1,6 @@
 #!/bin/bash
 ############################
-# .make.sh
+# make.sh
 # Creates symlinks from the home to any desired dotfiles in ~/dotfiles
 # From http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
 ############################
@@ -14,7 +14,7 @@ olddir=$(TMPDIR=~ mktemp -d -t .dotfiles_home.XXXXXX)
 olddir2=$(TMPDIR=~ mktemp -d -t .dotfiles.XXXXXX)
 mv -f $dir $olddir2
 # list of files/folders to symlink in homedir
-files="$(ls $PWD|grep -v install.sh| grep -v README.md | grep -v config)"
+files="$(ls $PWD|grep -v install.sh| grep -v README.md | grep -v config | grep -v "^.$")"
 ##########
 
 # create dotfiles_old in homedir
