@@ -10,3 +10,9 @@
 [submodule "vim/bundle/nertdree"]
 	path = vim/bundle/nertdree
 	url = git://github.com/scrooloose/nerdtree
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = git://github.com/ddollar/nerdcommenter
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git://github.com/ervandew/supertab.git
