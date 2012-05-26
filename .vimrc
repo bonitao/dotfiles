@@ -3,8 +3,8 @@ let moria_style = 'black'
 colorscheme moria
 map <C-x><C-b> :BufExplorer<CR>
 
-# The good parts from
-# http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+" The good parts from
+" http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 set ignorecase
 set smartcase
 set incsearch
