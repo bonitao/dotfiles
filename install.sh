@@ -8,7 +8,11 @@
 ########## Variables
 
 dir=~/.dotfiles                    # dotfiles directory
-olddir=$(TMPDIR=~ mktemp -d -t .dotfiles) # old dotfiles backup directory
+# old home dotfiles backup
+olddir=$(TMPDIR=~ mktemp -d -t .dotfiles_home.XXXXXX)
+ # old dotfiles directory backup
+olddir2=$(TMPDIR=~ mktemp -d -t .dotfiles.XXXXXX)
+mv -f $dir $olddir2
 # list of files/folders to symlink in homedir
 files="$(ls $PWD|grep -v install.sh| grep -v README.md)"
 ##########
@@ -29,4 +33,4 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
-echo "Please delete backup $olddir if everything is fine."
+echo "Please delete backup $olddir and $olddir2 if everything is fine."
