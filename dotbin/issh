@@ -1,0 +1,14 @@
+#!/bin/sh
+# ssh command tuned for slow connections
+# passwordless since it needs to reconnect
+alive_interval=10
+sleep=5
+host=$1
+SSH_OPTS="-oCompression=yes -oCheckHostIP=no -oStrictHostKeyChecking=no -oNumberOfPasswordPrompts=0 -oPasswordAuthentication=no -oServerAliveInterval=$alive_interval"
+tmux_cmd="tmx work 1"
+# Just keep reconnecting upon failure
+while [ 1 ]; do
+  ssh -t $host $SSH_OPTS $tmux_cmd
+  echo "SSH connection lost, reconnecting in $sleep seconds..."
+  sleep $sleep
+done
