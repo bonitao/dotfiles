@@ -341,16 +341,15 @@ awful.rules.rules = {
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "opera" },
-      properties = { tag = tags[1][2] } },
     { rule = { class = "amarok" },
       properties = { tag = tags[1][6] } },
     -- Set konsole to hold vim on work tag
-    { rule = { class = "Konsole_code" }, 
+    { rule = { instance = "codekonsole" },
       callback = function(c) c:tags({tags[1][1]}) end},
     -- Set xterm to work tag and email tag
-    { rule = { class = "XTerm_code" }, 
-      callback = function(c) c:tags({tags[1][1], tags[1][2]}) end},
+    { rule = { instance = "codexterm" }, 
+      callback = function(c) c:tags({tags[1][1], tags[1][2]})
+                             awful.client.setslave(c) end},
     -- Set chrome to email tag and coffee tag
     { rule = { class = "Chromium" }, 
       callback = function(c) c:tags({tags[1][2], tags[1][3]}) end},
@@ -358,7 +357,8 @@ awful.rules.rules = {
       callback = function(c) c:tags({tags[1][2], tags[1][3]}) end},
     -- Set firefox to coffee tag
     { rule = { class = "Firefox" }, 
-      callback = function(c) c:tags({tags[1][3]}) end},
+      callback = function(c) c:tags({tags[1][3]})
+                             awful.client.setslave(c) end},
 }
 ---- }}}
 
@@ -371,8 +371,9 @@ function run_once(cmd)
   awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
 end
 run_once("xscreensaver -no-splash")
-run_once("konsole_code konsole /usr/bin/vim code")
-run_once("xterm_code xterm /bin/bash code")
+run_once("runtmux")
+run_once("xterm -name codexterm -e tmx work 2")
+run_once("konsole -name codekonsole -e tmx work 1")
 run_once("chromium")
 run_once("google-chrome")
 run_once("firefox")

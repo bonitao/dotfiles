@@ -1,13 +1,7 @@
-#!/bin/sh
-name=$0
-term=${1:-xterm}
-shell=${2:-/bin/bash}
-session=${3:-work}
-export TERM=screen-256color-bce
-# code below is buggy
-tmux -2 list-clients -t $session
-if [ $? -eq 0 ]; then
-  exec -a $name $term -e tmux -2 new-session -t $session
-else
-  exec -a $name $term -e tmux -2 new-session -s $session $shell
-fi
+#!/bin/sh -x
+tmux has-session -t work && exit -1
+tmux new-session -d -s work
+tmux new-window -n code -t work:2 /bin/bash
+tmux kill-window -t work:1
+tmux new-window -n vim -t work:1 /usr/bin/vim
+tmux split-window -v -p 30 -t work:2 /bin/bash
