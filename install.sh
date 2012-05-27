@@ -14,7 +14,7 @@ olddir=$(TMPDIR=~ mktemp -d -t .dotfiles_home.XXXXXX)
 olddir2=$(TMPDIR=~ mktemp -d -t .dotfiles.XXXXXX)
 mv -f $dir $olddir2
 # list of files/folders to symlink in homedir
-files="$(ls $PWD|grep -v install.sh| grep -v README.md | grep -v config | grep -v "^.$")"
+files="$(ls $PWD|grep -v install.sh| grep -v README.md | grep -v config | grep -v "^.$" | grep -v ".local$")"
 ##########
 
 # create dotfiles_old in homedir

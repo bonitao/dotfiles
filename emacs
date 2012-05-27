@@ -1,10 +1,11 @@
 (setq viper-mode t)
 (require 'viper)
-(add-to-list 'load-path (expand-file-name "~/elisp"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/elisp"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install"))
 (require 'auto-install)
 
 (require 'doremi-cmd)
+
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
 (add-to-list 'ac-modes 'protobuffer-mode)
@@ -15,10 +16,6 @@
 
 (require 'color-theme)
 (color-theme-initialize)
-;; (color-theme-emacs-nw)
 (color-theme-sitaramv-solaris)
-;; (color-theme-parus)
-;;(color-theme-vim-colors)
-;;(color-theme-tty-dark)
-;;(color-theme-subtle-hacker)
-;;(color-theme-blue-gnus)
+
+(load-file "~/.emacs.local")
