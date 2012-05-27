@@ -22,3 +22,5 @@
 ;;(color-theme-tty-dark)
 ;;(color-theme-subtle-hacker)
 ;;(color-theme-blue-gnus)
+
+(load-file "~/.emacs.local")
