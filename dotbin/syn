@@ -1,0 +1,9 @@
+#!/bin/sh
+( sleep 1 ; exec /usr/bin/synergyc -f -n maclaptop localhost:24800 ) &
+trap "kill $!" EXIT
+trap "exit 1" HUP INT
+while true; do
+  echo Attempting ssh...
+  ssh -i $HOME/.ssh/synergy_dsa -N -x -L localhost:24800:localhost:24800 192.168.10.200
+  sleep 5
+done
