@@ -1,4 +1,4 @@
-XTerm*faceName:     Inconsolata-dz-Powerline
+XTerm*faceName:     Inconsolata
 XTerm*faceSize:     16
 XTerm*faceSize1:    12
 XTerm*faceSize2:    13
@@ -7,7 +7,12 @@ XTerm*faceSize4:    16
 XTerm*faceSize5:    20
 XTerm*faceSize6:    28
 
-XTerm*faceName:     Inconsolata-dz-Powerline
+URxvt*scrollBar: false
+URxvt*font: xft:Inconsolata\-dz for Powerline:pixelsize=14
+URxvt*transparent: false
+URxvt*depth: 32
+
+Emacs*faceName:     Inconsolata\-dz for Powerline
 Emacs*faceSize:     12
 Emacs*faceSize1:    8
 Emacs*faceSize2:    9
