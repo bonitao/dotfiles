@@ -12,7 +12,7 @@ require("naughty")
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "/home/davi/.dotbin/xtermtmux.sh"
+terminal = "xterm"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 otp = "fetchotp --noui -x"  -- print otp on the cursor
@@ -52,7 +52,7 @@ theme.taglist_font = "Inconsolata Medium 14"
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "⚡", "✉", "☕", "➍", "➎" }, s, layouts[1])
+    tags[s] = awful.tag({ "⚡", "✉", "☕", "➍", "➎", "♬" }, s, layouts[1])
 end
 -- }}}
 
@@ -332,28 +332,47 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 
 --awful.tag.viewonly(1)
 --awful.tag.incmwfact(0.15, 1)
----- {{{ Rules
---awful.rules.rules = {
---    -- All clients will match this rule.
---    { rule = { },
---      properties = { border_width = beautiful.border_width,
---                     border_color = beautiful.border_normal,
---                     focus = true,
---                     keys = clientkeys,
---                     buttons = clientbuttons } },
---    { rule = { class = "opera" },
---      properties = { tag = tags[1][2] } },
---    -- Set Firefox to always map on tags number 2 of screen 1.
---    -- { rule = { class = "Firefox" },
---    --   properties = { tag = tags[1][2] } },
---}
+-- {{{ Rules
+awful.rules.rules = {
+    -- All clients will match this rule.
+    { rule = { },
+      properties = { border_width = beautiful.border_width,
+                     border_color = beautiful.border_normal,
+                     focus = true,
+                     keys = clientkeys,
+                     buttons = clientbuttons } },
+    { rule = { class = "opera" },
+      properties = { tag = tags[1][2] } },
+    { rule = { class = "amarok" },
+      properties = { tag = tags[1][6] } },
+    -- Set konsole to hold vim on work tag
+    { rule = { class = "Konsole_code" }, 
+      callback = function(c) c:tags({tags[1][1]}) end},
+    -- Set xterm to work tag and email tag
+    { rule = { class = "XTerm_code" }, 
+      callback = function(c) c:tags({tags[1][1], tags[1][2]}) end},
+    -- Set chrome to email tag and coffee tag
+    { rule = { class = "Chromium" }, 
+      callback = function(c) c:tags({tags[1][2], tags[1][3]}) end},
+    { rule = { class = "Google-chrome" }, 
+      callback = function(c) c:tags({tags[1][2], tags[1][3]}) end},
+    -- Set firefox to coffee tag
+    { rule = { class = "Firefox" }, 
+      callback = function(c) c:tags({tags[1][3]}) end},
+}
 ---- }}}
---
---function run_once(cmd)
---  findme = cmd
---  firstspace = cmd:find(" ")
---  if firstspace then
---    findme = cmd:sub(0, firstspace-1)
---  end
---  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
---end
+
+function run_once(cmd)
+  findme = cmd
+  firstspace = cmd:find(" ")
+  if firstspace then
+    findme = cmd:sub(0, firstspace-1)
+  end
+  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
+end
+run_once("xscreensaver -no-splash")
+run_once("konsole_code konsole /usr/bin/vim code")
+run_once("xterm_code xterm /bin/bash code")
+run_once("chromium")
+run_once("google-chrome")
+run_once("firefox")
