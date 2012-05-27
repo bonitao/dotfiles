@@ -347,7 +347,7 @@ awful.rules.rules = {
     { rule = { instance = "codekonsole" },
       callback = function(c) c:tags({tags[1][1]}) end},
     -- Set xterm to work tag and email tag
-    { rule = { instance = "codexterm" }, 
+    { rule = { instance = "codexterm" },
       callback = function(c) c:tags({tags[1][1], tags[1][2]})
                              awful.client.setslave(c) end},
     -- Set chrome to email tag and coffee tag
@@ -359,6 +359,13 @@ awful.rules.rules = {
     { rule = { class = "Firefox" }, 
       callback = function(c) c:tags({tags[1][3]})
                              awful.client.setslave(c) end},
+    -- And a small konsole in coffee tag. Unused for now.
+    { rule = { instance = "shellkonsole" },
+      callback = function(c) c:tags({tags[1][3]})
+                             awful.client.setslave(c)
+                             awful.tag.viewonly(tags[1][3])
+                             awful.tag.incmwfact(0.25, tags[1][3])
+                             end},
 }
 ---- }}}
 
