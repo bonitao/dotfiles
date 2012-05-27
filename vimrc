@@ -5,6 +5,13 @@ filetype plugin on
 set t_Co=256
 map <C-x><C-b> :BufExplorer<CR>
 
+" Requirements for vim powerline. Don't bother repeating.
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show unicode glyphs
+set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+let g:Powerline_symbols='fancy'
+
 syntax on
 let moria_style = 'black'
 colorscheme moria

@@ -29,11 +29,12 @@ echo "Moving any existing dotfiles from ~ to $olddir"
 for file in $files; do
     cp -a $file $dir/
     test -f ~/.$file && mv -f ~/.$file $olddir
-    echo "Creating symlink to $file in home directory."
+    echo "Creating symlink to $dir/$file -> ~/.$file."
     ln -s $dir/$file ~/.$file
 done
 # Special case .config for lazyness preventing touching other apps
 mkdir -p ~/.config/awesome
 cp -a config/awesome/rc.lua ~/.config/awesome/
+sudo fc-cache -vf
 
 echo "Please delete backup $olddir and $olddir2 if everything is fine."
