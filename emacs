@@ -5,6 +5,7 @@
 (require 'auto-install)
 
 (require 'doremi-cmd)
+
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
 (add-to-list 'ac-modes 'protobuffer-mode)
