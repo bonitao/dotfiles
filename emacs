@@ -1,6 +1,6 @@
 (setq viper-mode t)
 (require 'viper)
-(add-to-list 'load-path (expand-file-name "~/elisp"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/elisp"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install"))
 (require 'auto-install)
 

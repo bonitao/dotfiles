@@ -42,4 +42,4 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 let g:ctrlp_lazy_update = 0
 
-source ".vimrc.local"
+so ~/.vimrc.local
