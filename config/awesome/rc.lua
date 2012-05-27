@@ -41,13 +41,18 @@ layouts =
     awful.layout.suit.magnifier
 }
 -- }}}
+-- http://awesome.naquadah.org/wiki/Symbolic_tag_names
+-- Increase font a bit for nice icons
+theme.font      = "Inconsolata Medium 10"
+-- make tag list bigger
+theme.taglist_font = "Inconsolata Medium 14"
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+    tags[s] = awful.tag({ "⚡", "✉", "☕", "➍", "➎" }, s, layouts[1])
 end
 -- }}}
 
@@ -219,7 +224,16 @@ globalkeys = awful.util.table.join(
                   mypromptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
-              end)
+              end),
+    -- http://awesome.naquadah.org/wiki/Workaround_plugins_that_steal_the_keyboard_focus
+    -- Escape from keyboard focus trap (eg Flash plugin in Firefox)
+    awful.key({ modkey, "Control" }, "f",
+              function ()
+                 awful.util.spawn("xdotool getactivewindow mousemove --window %1 0 0 click --clearmodifiers 2")
+              end),
+    -- Lock screen
+    awful.key({ modkey, "Control" }, "x",
+              function () awful.util.spawn("xlock") end)
 )
 
 clientkeys = awful.util.table.join(
@@ -285,27 +299,6 @@ clientbuttons = awful.util.table.join(
 root.keys(globalkeys)
 -- }}}
 
--- {{{ Rules
-awful.rules.rules = {
-    -- All clients will match this rule.
-    { rule = { },
-      properties = { border_width = beautiful.border_width,
-                     border_color = beautiful.border_normal,
-                     focus = true,
-                     keys = clientkeys,
-                     buttons = clientbuttons } },
-    { rule = { class = "MPlayer" },
-      properties = { floating = true } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
-    { rule = { class = "gimp" },
-      properties = { floating = true } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
-}
--- }}}
-
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.add_signal("manage", function (c, startup)
@@ -336,3 +329,31 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+--awful.tag.viewonly(1)
+--awful.tag.incmwfact(0.15, 1)
+---- {{{ Rules
+--awful.rules.rules = {
+--    -- All clients will match this rule.
+--    { rule = { },
+--      properties = { border_width = beautiful.border_width,
+--                     border_color = beautiful.border_normal,
+--                     focus = true,
+--                     keys = clientkeys,
+--                     buttons = clientbuttons } },
+--    { rule = { class = "opera" },
+--      properties = { tag = tags[1][2] } },
+--    -- Set Firefox to always map on tags number 2 of screen 1.
+--    -- { rule = { class = "Firefox" },
+--    --   properties = { tag = tags[1][2] } },
+--}
+---- }}}
+--
+--function run_once(cmd)
+--  findme = cmd
+--  firstspace = cmd:find(" ")
+--  if firstspace then
+--    findme = cmd:sub(0, firstspace-1)
+--  end
+--  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
+--end
