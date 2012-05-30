@@ -414,18 +414,16 @@ awful.rules.rules = {
 }
 ---- }}}
 
-function run_once(cmd)
-  findme = cmd
-  firstspace = cmd:find(" ")
-  if firstspace then
-    findme = cmd:sub(0, firstspace-1)
-  end
-  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
+function run_once(cmd, name)
+  awful.util.spawn_with_shell(
+      "/usr/bin/lockrun --lockfile /tmp/" ... name ... ".lockfile " ... cmd)
 end
-run_once("xscreensaver -no-splash")
-run_once("runtmux")
-run_once("xterm -name codexterm -e tmx work 2")
-run_once("konsole -name codekonsole -e tmx work 1")
-run_once("chromium")
-run_once("google-chrome")
-run_once("firefox")
+
+run_once("xscreensaver", "xscreensaver.awesome")
+run_once("synersys -a localhost", "synersys.awesome")
+run_once("runtmux", "runtmux.awesome")
+run_once("xterm -name codexterm -e tmx work 2", "codexterm.awesome")
+run_once("konsole -name codekonsole -e tmx work 1", "konsole.awesome")
+run_once("chromium", "chromium.awesome")
+run_once("google-chrome", "google-chrome.awesome")
+run_once("firefox", "firefox.awesome")
