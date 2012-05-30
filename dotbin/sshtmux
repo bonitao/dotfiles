@@ -6,7 +6,7 @@ sleep=5
 host=${1:-davi.hot}
 session=${2:-work}
 window=${3:-1}
-SSH_OPTS="-oCompression=yes -oCheckHostIP=no -oStrictHostKeyChecking=no -oNumberOfPasswordPrompts=0 -oPasswordAuthentication=no -oServerAliveInterval=$alive_interval"
+SSH_OPTS="-oCompression=yes -oServerAliveInterval=$alive_interval"
 tmux_cmd="tmx $session $window"
 # Just keep reconnecting upon failure
 while [ 1 ]; do
