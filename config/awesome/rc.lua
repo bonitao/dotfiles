@@ -416,9 +416,10 @@ awful.rules.rules = {
 
 function run_once(cmd, name)
   awful.util.spawn_with_shell(
-      "/usr/bin/lockrun --lockfile /tmp/" ... name ... ".lockfile " ... cmd)
+      "/usr/bin/flock /tmp/" .. name .. ".lockfile " .. cmd)
 end
 
+awful.util.spawn_with_shell("xrdb -merge .Xdefaults")
 run_once("xscreensaver", "xscreensaver.awesome")
 run_once("synersys -a localhost", "synersys.awesome")
 run_once("runtmux", "runtmux.awesome")
