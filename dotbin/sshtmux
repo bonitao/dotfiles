@@ -8,6 +8,9 @@ session=${2:-work}
 window=${3:-1}
 SSH_OPTS="-oCompression=yes -oServerAliveInterval=$alive_interval"
 tmux_cmd="tmx $session $window"
+if [ $TERM_PROGRAM=="iTerm.app" ]; then
+  tmux_cmd="itermtmx $session $window"
+fi
 # Just keep reconnecting upon failure
 while [ 1 ]; do
   ssh -t $host $SSH_OPTS $tmux_cmd
