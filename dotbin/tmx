@@ -27,9 +27,10 @@ fi
 
 base_session="$1"
 window="$2"
-tmux_cmd ="tmux -2"
-if [ $(uname -s) == "Darwin" ]; then
-  tmux_cmd = "tmux -2 -C"
+tmux_cmd="tmux -2"
+TERM_PROGRAM=${TERM_PROGRAM:-"unset"}
+if [ $TERM_PROGRAM = "iTerm.app" -o $(basename $0) = "itermtmx" ]; then
+  tmux_cmd="tmux -2 -C"
 fi
 # This actually works without the trim() on all systems except OSX
 tmux_nb=$(trim `tmux ls | grep "^$base_session" | wc -l`)

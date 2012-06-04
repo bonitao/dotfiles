@@ -40,6 +40,5 @@ set hidden       " allow buffer switching without saving"
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
-let g:ctrlp_lazy_update = 0
-
+let g:ctrlp_lazy_update = 1
 so ~/.vimrc.local
