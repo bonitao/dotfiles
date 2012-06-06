@@ -385,6 +385,9 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = true,
                      keys = clientkeys,
+                     -- prevent maximized windows
+                     maximized_vertical   = false,
+                     maximized_horizontal = false,
                      buttons = clientbuttons } },
     { rule = { class = "amarok" },
       properties = { tag = tags[1][6] } },
@@ -419,7 +422,8 @@ function run_once(cmd, name)
       "/usr/bin/flock /tmp/" .. name .. ".lockfile " .. cmd)
 end
 
-awful.util.spawn_with_shell("xrdb -merge .Xdefaults")
+run_once("xrdb -merge .Xdefaults")
+run_once("keynav")
 run_once("xscreensaver", "xscreensaver.awesome")
 run_once("synersys -a localhost", "synersys.awesome")
 run_once("runtmux", "runtmux.awesome")

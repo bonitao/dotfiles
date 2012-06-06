@@ -1,11 +1,11 @@
 XTerm*faceName:     Inconsolata
-XTerm*faceSize:     16
-XTerm*faceSize1:    12
-XTerm*faceSize2:    13
-XTerm*faceSize3:    14
-XTerm*faceSize4:    16
-XTerm*faceSize5:    20
-XTerm*faceSize6:    28
+XTerm*faceSize:     12
+XTerm*faceSize1:    8
+XTerm*faceSize2:    9
+XTerm*faceSize3:    10
+XTerm*faceSize4:    12
+XTerm*faceSize5:    16
+XTerm*faceSize6:    24
 
 URxvt*scrollBar: false
 URxvt*font: xft:Inconsolata\-dz for Powerline:pixelsize=14
