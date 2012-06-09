@@ -422,8 +422,8 @@ function run_once(cmd, name)
       "/usr/bin/flock /tmp/" .. name .. ".lockfile " .. cmd)
 end
 
-run_once("xrdb -merge .Xdefaults")
-run_once("keynav")
+run_once("xrdb -merge .Xdefaults", "xrdb.awesome")
+run_once("keynav", "keynav.awesome")
 run_once("xscreensaver", "xscreensaver.awesome")
 run_once("synersys -a localhost", "synersys.awesome")
 run_once("runtmux", "runtmux.awesome")
