@@ -3,18 +3,18 @@ if [ -f /etc/bashrc ]; then
 fi
 
 export EDITOR=vim
+alias vo="vim --servername VIM --remote"
+alias vi="vim"
 MACVIM=/Applications/MacVim.app/Contents/MacOS/Vim
 if [ -f $MACVIM ]; then
    EDITOR=$MACVIM
+  alias vim=$MACVIM
+  alias vi=$MACVIM
+  alias vo="$MACVIM --servername VIM --remote"
 fi
 
 export PATH=$PATH:$HOME/.dotbin:/usr/local/homebrew/bin
 alias tmux="TERM=screen-256color-bce tmux"
-MACVIM="/Applications/MacVim.app/Contents/MacOS/Vim"
-if test -e $MACVIM; then
-  alias vim=$MACVIM
-  alias vi=$MACVIM
-fi
 
 # History stuff
 export HISTFILESIZE=1000000000

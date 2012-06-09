@@ -3,5 +3,5 @@ tmux has-session -t work && exit -1
 tmux new-session -d -s work
 tmux new-window -n code -t work:2 /bin/bash
 tmux kill-window -t work:1
-tmux new-window -n vim -t work:1 /usr/bin/vim
+tmux new-window -n vim -t work:1 "/usr/bin/vim --servername VIM"
 tmux split-window -v -p 30 -t work:2 /bin/bash
