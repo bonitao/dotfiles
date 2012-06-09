@@ -27,18 +27,23 @@ fi
 
 base_session="$1"
 window="$2"
+tmux_cmd="tmux -2"
+TERM_PROGRAM=${TERM_PROGRAM:-"unset"}
+if [ $TERM_PROGRAM = "iTerm.app" -o $(basename $0) = "itermtmx" ]; then
+  tmux_cmd="tmux -2 -C"
+fi
 # This actually works without the trim() on all systems except OSX
 tmux_nb=$(trim `tmux ls | grep "^$base_session" | wc -l`)
 if [[ "$tmux_nb" == "0" ]]; then
     echo "Launching tmux base session $base_session ..."
-    tmux -C -2 new-session -s $base_session
+    $tmux_cmd new-session -s $base_session
 else
     # Make sure we are not already in a tmux session
     if [[ -z "$TMUX" ]]; then
         # Kill defunct sessions first
         old_sessions=$(tmux ls 2>/dev/null | egrep "^[0-9]{14}.*[0-9]+\)$" | cut -f 1 -d:)
         for old_session_id in $old_sessions; do
-            tmux kill-session -t $old_session_id
+            $tmux_cmd kill-session -t $old_session_id
         done
 
         echo "Launching copy of base session $base_session ..."
@@ -46,12 +51,12 @@ else
         session_id=`date +%Y%m%d%H%M%S`.$RANDOM
         # Create a new session (without attaching it) and link to base session 
         # to share windows
-        tmux -C -2 new-session -d -t $base_session -s $session_id
-        tmux -C -2 select-window -t $session_id:$window
+        $tmux_cmd -C -2 new-session -d -t $base_session -s $session_id
+        $tmux_cmd -C -2 select-window -t $session_id:$window
         # Attach to the new session
-        tmux -C -2 attach-session -t $session_id
+        $tmux_cmd -C -2 attach-session -t $session_id
         # When we detach from it, kill the session
-        tmux kill-session -t $session_id
+        $tmux_cmd kill-session -t $session_id
     fi
 fi 
 
