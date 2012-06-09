@@ -51,10 +51,10 @@ else
         session_id=`date +%Y%m%d%H%M%S`.$RANDOM
         # Create a new session (without attaching it) and link to base session 
         # to share windows
-        $tmux_cmd -C -2 new-session -d -t $base_session -s $session_id
-        $tmux_cmd -C -2 select-window -t $session_id:$window
+        $tmux_cmd -2 new-session -d -t $base_session -s $session_id
+        $tmux_cmd -2 select-window -t $session_id:$window
         # Attach to the new session
-        $tmux_cmd -C -2 attach-session -t $session_id
+        $tmux_cmd -2 attach-session -t $session_id
         # When we detach from it, kill the session
         $tmux_cmd kill-session -t $session_id
     fi
