@@ -41,4 +41,8 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 let g:ctrlp_lazy_update = 1
+let g:NERDSpaceDelims = 1
 so ~/.vimrc.local
+au BufRead,BufNewFile *.go set nolist
+au BufRead,BufNewFile *.go set ts=2 tw=2 noet
+
