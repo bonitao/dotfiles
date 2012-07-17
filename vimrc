@@ -39,6 +39,7 @@ set hidden       " allow buffer switching without saving"
 
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
+nmap <C-x> :call AsyncMake  # asynchronous compilation
 
 let g:ctrlp_lazy_update = 1
 let g:NERDSpaceDelims = 1
