@@ -41,6 +41,11 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 nmap <C-x> :call AsyncMake  # asynchronous compilation
 
+" http://www.vim.org/scripts/script.php?script_id=3834
+let g:yankstack_map_keys = 0
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_older_paste
+
 let g:ctrlp_lazy_update = 1
 let g:NERDSpaceDelims = 1
 so ~/.vimrc.local
