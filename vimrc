@@ -47,6 +47,7 @@ nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_older_paste
 
 let g:ctrlp_lazy_update = 1
+let g:ctrlp_max_depth = 10
 let g:NERDSpaceDelims = 1
 so ~/.vimrc.local
 au BufRead,BufNewFile *.go set nolist
