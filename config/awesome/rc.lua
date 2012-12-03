@@ -263,7 +263,7 @@ globalkeys = awful.util.table.join(
               end),
     -- http://awesome.naquadah.org/wiki/Workaround_plugins_that_steal_the_keyboard_focus
     -- Escape from keyboard focus trap (eg Flash plugin in Firefox)
-    awful.key({ modkey, "Control" }, "f",
+awful.key({ modkey, "Control" }, "f",
               function ()
                  awful.util.spawn("xdotool getactivewindow mousemove --window %1 0 0 click --clearmodifiers 2")
               end),
@@ -423,6 +423,7 @@ function run_once(cmd, name)
 end
 
 run_once("xrdb -merge .Xdefaults", "xrdb.awesome")
+-- Split mouse focus using keyboard
 run_once("keynav", "keynav.awesome")
 run_once("xscreensaver", "xscreensaver.awesome")
 run_once("synersys -a localhost", "synersys.awesome")

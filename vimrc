@@ -53,3 +53,7 @@ so ~/.vimrc.local
 au BufRead,BufNewFile *.go set nolist
 au BufRead,BufNewFile *.go set ts=2 tw=2 noet
 
+" No prompts.
+" http://od-eon.com/blogs/stefan/reloading-externally-modified-buffers-vim/
+set autoread
+
