@@ -269,7 +269,7 @@ awful.key({ modkey, "Control" }, "f",
               end),
     -- Lock screen
     awful.key({ modkey, "Control" }, "x",
-              function () awful.util.spawn("xlock") end),
+              function () awful.util.spawn("xscreensaver-command -lock") end),
     awful.key({ "Mod1" }, "Tab",
               function ()
                  awful.client.focus.byidx( 1)
