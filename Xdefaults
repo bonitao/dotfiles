@@ -1,3 +1,8 @@
+*VT100.Translations: #override Ctrl <Btn4Down>: larger-vt-font() \n\ 
+Ctrl <Btn5Down>: smaller-vt-font() \n\ 
+Shift Ctrl <Key>=: larger-vt-font() \n\ 
+Shift Ctrl <Key>-: smaller-vt-font() 
+
 XTerm*faceName:     Inconsolata
 XTerm*faceSize:     12
 XTerm*faceSize1:    8
@@ -64,4 +69,4 @@ XTerm*color4: #84cfef
 !(5 is for import/from color in python)
 XTerm*color5: #ce5d5a
 !(6 is for function color in python)
- XTerm*color6: #87ff87
+XTerm*color6: #87ff87
