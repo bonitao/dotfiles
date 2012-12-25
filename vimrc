@@ -15,6 +15,10 @@ let g:Powerline_symbols='fancy'
 syntax on
 let moria_style = 'black'
 colorscheme moria
+let g:neocomplcache_enable_at_startup = 1
+" http://superuser.com/questions/40378/how-to-make-vims-auto-complete-behave-like-bashs-default-auto-complete
+set wildmenu
+set wildmode=list:longest
 
 "" The good parts from
 "" http://stevelosh.com/blog/2010/09/coming-home-to-vim/
