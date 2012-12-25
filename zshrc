@@ -1,1 +1,20 @@
-zprezto/runcoms/zshrc
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+export REPORTTIME=2
+setopt prompt_subst
+local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
+if [ $SSH_CONNECTION ]; then SSH="%n@%m "; else SSH=""; fi
+PROMPT='$SSH%4(c:$(pwd | sed -e "s#\([^/]\)[^/]*/#\1/#g"):%3c) %# '
+RPROMPT='$git_info[prompt] ${smiley}'
+
