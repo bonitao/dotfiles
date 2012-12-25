@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vim-yankstack"]
 	path = vim/bundle/vim-yankstack
 	url = git://github.com/maxbrunsfeld/vim-yankstack
+[submodule "vim/bundle/neocomplcache"]
+	path = vim/bundle/neocomplcache
+	url = git://github.com/Shougo/neocomplcache.git
