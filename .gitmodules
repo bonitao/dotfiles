@@ -28,6 +28,3 @@
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
-[submodule "zprezto"]
-	path = zprezto
-	url = https://github.com/sorin-ionescu/prezto.git
