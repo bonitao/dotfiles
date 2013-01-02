@@ -11,6 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+setopt inc_append_history
 source ${ZDOTDIR:-$HOME}/.zsh/git-prompt/zshrc.sh
 export REPORTTIME=2
 setopt prompt_subst
