@@ -2,6 +2,7 @@ if [ -f /etc/bashrc ]; then
    . /etc/bashrc
 fi
 
+
 export EDITOR=vim
 alias vo="vim --servername davim --remote"
 alias vi="vim --servername davim"

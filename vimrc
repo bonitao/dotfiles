@@ -2,19 +2,19 @@ call pathogen#infect()
 call pathogen#helptags()
 set nocompatible
 filetype plugin on
-set t_Co=256
 map <C-x><C-b> :BufExplorer<CR>
+
+syntax on
+set background=dark
+colorscheme  solarized
+call togglebg#map("<F5>")
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show unicode glyphs
-set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 let g:Powerline_symbols='fancy'
 
-syntax on
-let background = 'dark'
-colorscheme  solarized
 let g:neocomplcache_enable_at_startup = 1
 " http://superuser.com/questions/40378/how-to-make-vims-auto-complete-behave-like-bashs-default-auto-complete
 set wildmenu
