@@ -13,8 +13,8 @@ set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 let g:Powerline_symbols='fancy'
 
 syntax on
-let moria_style = 'black'
-colorscheme moria
+let background = 'dark'
+colorscheme  solarized
 let g:neocomplcache_enable_at_startup = 1
 " http://superuser.com/questions/40378/how-to-make-vims-auto-complete-behave-like-bashs-default-auto-complete
 set wildmenu
@@ -52,6 +52,7 @@ nmap <leader>P <Plug>yankstack_substitute_older_paste
 
 let g:ctrlp_lazy_update = 1
 let g:ctrlp_max_depth = 10
+let g:ctrlp_max_files = 50000
 let g:NERDSpaceDelims = 1
 so ~/.vimrc.local
 au BufRead,BufNewFile *.go set nolist
