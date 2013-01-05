@@ -35,6 +35,7 @@ done
 # Special case .config for lazyness preventing touching other apps
 mkdir -p ~/.config/awesome
 cp -a config/awesome/rc.lua ~/.config/awesome/
+cp -a prompt_davi_setup ~/.zprezto/modules/prompt/functions/
 
 echo "Please delete backup $olddir and $olddir2 if everything is fine."
 echo "If you installed new fonts please run"

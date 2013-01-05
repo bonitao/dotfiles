@@ -22,6 +22,7 @@ URxvt*colorUL: yellow
 URxvt*colorULMode: on
 URxvt*dynamicColors: off
 URxvt*highlightSelection: true
+
 !———————————————————-
 ! Colorscheme based on the gvim colorscheme desert
 !———————————————————-
@@ -51,6 +52,51 @@ URxvt*color4: #84cfef
 URxvt*color5: #ce5d5a
 !(6 is for function color in python)
 URxvt*color6: #87ff87
+
+!---- Light URxvt (Solarized Light, 11pt)
+LURxvt*font:                           xft:Inconsolata for Powerline
+LURxvt*fading:                 0
+LURxvt*background:             #fdf6e3
+LURxvt*foreground:             #839496
+LURxvt*fadeColor:              #fdf6e3
+LURxvt*cursorColor:            #586e75
+LURxvt*pointerColorBackground: #93a1a1
+LURxvt*pointerColorForeground: #586e75
+LURxvt*color0:                 #073642
+LURxvt*color8:                 #fdf6e3
+LURxvt*color10:                #93a1a1
+LURxvt*color11:                #839496
+LURxvt*color12:                #657b83
+LURxvt*color14:                #586e75
+LURxvt*color7:                 #839496
+LURxvt*color15:                #002b36
+
+!---- Default DURxvt (Solarized Dark, 12px)
+DURxvt*fading:                         30
+DURxvt*background:                     #002b36
+DURxvt*foreground:                     #657b83
+DURxvt*fadeColor:                      #002b36
+DURxvt*cursorColor:                    #93a1a1
+DURxvt*pointerColorBackground:         #586e75
+DURxvt*pointerColorForeground:         #93a1a1
+DURxvt*colorUL:                        #859900
+DURxvt*colorBD:                        #268bd2
+DURxvt*color0:                         #073642
+DURxvt*color8:                         #002b36
+DURxvt*color1:                         #dc322f
+DURxvt*color9:                         #cb4b16
+DURxvt*color2:                         #859900
+DURxvt*color10:                        #586e75
+DURxvt*color3:                         #b58900
+DURxvt*color11:                        #657b83
+DURxvt*color4:                         #268bd2
+DURxvt*color12:                        #839496
+DURxvt*color5:                         #d33682
+DURxvt*color13:                        #6c71c4
+DURxvt*color6:                         #2aa198
+DURxvt*color14:                        #93a1a1
+DURxvt*color7:                         #eee8d5
+DURxvt*color15:                        #fdf6e3
 
 XTerm*faceName:     xft:Inconsolata for Powerline
 XTerm*font:     xft:Inconsolata for Powerline

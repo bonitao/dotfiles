@@ -5,8 +5,11 @@ filetype plugin on
 map <C-x><C-b> :BufExplorer<CR>
 
 syntax on
+" Needed for chrome secure shell only
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
 set background=dark
-colorscheme  solarized
+colorscheme solarized
 call togglebg#map("<F5>")
 
 " Requirements for vim powerline. Don't bother repeating.
