@@ -11,6 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export DEFAULT_USER=davi
+bindkey -s "\C-j" " 2>&1|less\C-m"
 setopt inc_append_history
 source ${ZDOTDIR:-$HOME}/.zsh/git-prompt/zshrc.sh
 export REPORTTIME=2
