@@ -53,96 +53,138 @@ URxvt*color5: #ce5d5a
 !(6 is for function color in python)
 URxvt*color6: #87ff87
 
-!---- Light URxvt (Solarized Light, 11pt)
-LURxvt*font:                           xft:Inconsolata for Powerline
-LURxvt*fading:                 0
-LURxvt*background:             #fdf6e3
-LURxvt*foreground:             #839496
-LURxvt*fadeColor:              #fdf6e3
-LURxvt*cursorColor:            #586e75
-LURxvt*pointerColorBackground: #93a1a1
-LURxvt*pointerColorForeground: #586e75
-LURxvt*color0:                 #073642
-LURxvt*color8:                 #fdf6e3
-LURxvt*color10:                #93a1a1
-LURxvt*color11:                #839496
-LURxvt*color12:                #657b83
-LURxvt*color14:                #586e75
-LURxvt*color7:                 #839496
-LURxvt*color15:                #002b36
+DURxvt*faceName:     xft:Inconsolata for Powerline
+DURxvt*font:     xft:Inconsolata for Powerline
+DURxvt*faceSize:     12
+DURxvt*faceSize1:    8
+DURxvt*faceSize2:    9
+DURxvt*faceSize3:    10
+DURxvt*faceSize4:    12
+DURxvt*faceSize5:    16
+DURxvt*faceSize6:    24
+DURxvt*scrollBar: false
+DURxvt*transparent: false
+DURxvt*depth: 32
+DURxvt*termName:  screen-256color
+DURxvt*colorMode: on
+DURxvt*colorBD: lightyellow
+DURxvt*colorUL: yellow
+DURxvt*colorULMode: on
+DURxvt*dynamicColors: off
+DURxvt*highlightSelection: true
 
-!---- Default DURxvt (Solarized Dark, 12px)
-DURxvt*fading:                         30
-DURxvt*background:                     #002b36
-DURxvt*foreground:                     #657b83
-DURxvt*fadeColor:                      #002b36
-DURxvt*cursorColor:                    #93a1a1
-DURxvt*pointerColorBackground:         #586e75
-DURxvt*pointerColorForeground:         #93a1a1
-DURxvt*colorUL:                        #859900
-DURxvt*colorBD:                        #268bd2
-DURxvt*color0:                         #073642
-DURxvt*color8:                         #002b36
-DURxvt*color1:                         #dc322f
-DURxvt*color9:                         #cb4b16
-DURxvt*color2:                         #859900
-DURxvt*color10:                        #586e75
-DURxvt*color3:                         #b58900
-DURxvt*color11:                        #657b83
-DURxvt*color4:                         #268bd2
-DURxvt*color12:                        #839496
-DURxvt*color5:                         #d33682
-DURxvt*color13:                        #6c71c4
-DURxvt*color6:                         #2aa198
-DURxvt*color14:                        #93a1a1
-DURxvt*color7:                         #eee8d5
-DURxvt*color15:                        #fdf6e3
+LURxvt*faceName:     xft:Inconsolata for Powerline
+LURxvt*font:     xft:Inconsolata for Powerline
+LURxvt*faceSize:     12
+LURxvt*faceSize1:    8
+LURxvt*faceSize2:    9
+LURxvt*faceSize3:    10
+LURxvt*faceSize4:    12
+LURxvt*faceSize5:    16
+LURxvt*faceSize6:    24
+LURxvt*scrollBar: false
+LURxvt*transparent: false
+LURxvt*depth: 32
+LURxvt*termName:  screen-256color
+LURxvt*colorMode: on
+LURxvt*colorBD: lightyellow
+LURxvt*colorUL: yellow
+LURxvt*colorULMode: on
+LURxvt*dynamicColors: off
+LURxvt*highlightSelection: true
 
-XTerm*faceName:     xft:Inconsolata for Powerline
-XTerm*font:     xft:Inconsolata for Powerline
-XTerm*faceSize:     12
-XTerm*faceSize1:    8
-XTerm*faceSize2:    9
-XTerm*faceSize3:    10
-XTerm*faceSize4:    12
-XTerm*faceSize5:    16
-XTerm*faceSize6:    24
-XTerm*scrollBar: false
-XTerm*transparent: false
-XTerm*depth: 32
-XTerm*termName:  screen-256color
-XTerm*colorMode: on
-XTerm*colorBD: lightyellow
-XTerm*colorUL: yellow
-XTerm*colorULMode: on
-XTerm*dynamicColors: off
-XTerm*highlightSelection: true
-!———————————————————-
-! Colorscheme based on the gvim colorscheme desert
-!———————————————————-
-XTerm*background: #313031
-XTerm*foreground: White
-!colors
-!(unknown)
-XTerm*color0: #000000
-XTerm*color7: #bebebe
-XTerm*color8: #666666
-XTerm*color9: #cf6171
-XTerm*color10: #c5f779
-XTerm*color11: #fff796
-XTerm*color12: #4186be
-XTerm*color13: #cf9ebe
-XTerm*color14: #71bebe
-XTerm*color15: #ffffff
-!(1 is an option color in .Xdefaults)
-XTerm*color1: #ffa2a5
-!(2 is a resource color in .Xdefaults)
-XTerm*color2: #bdb66b
-!(3 is for def/return color in python)
-XTerm*color3: #f7e78c
-!(4 is for comments color in python)
-XTerm*color4: #84cfef
-!(5 is for import/from color in python)
-XTerm*color5: #ce5d5a
-!(6 is for function color in python)
-XTerm*color6: #87ff87
+! Solarized color scheme for the X Window System
+!
+! http://ethanschoonover.com/solarized
+
+
+! Common
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+
+! Dark
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+
+! Light
+
+#define LS_base03        #fdf6e3
+#define LS_base02        #eee8d5
+#define LS_base01        #93a1a1
+#define LS_base00        #839496
+#define LS_base0         #657b83
+#define LS_base1         #586e75
+#define LS_base2         #073642
+#define LS_base3         #002b36
+
+
+! To only apply colors to your terminal, for example, prefix
+! the color assignment statement with its name. Example:
+!
+! URxvt*background:            S_base03
+
+DURxvt*background:              S_base03
+DURxvt*foreground:              S_base0
+DURxvt*fading:                  40
+DURxvt*fadeColor:               S_base03
+DURxvt*cursorColor:             S_base1
+DURxvt*pointerColorBackground:  S_base01
+DURxvt*pointerColorForeground:  S_base1
+
+DURxvt*color0:                  S_base02
+DURxvt*color1:                  S_red
+DURxvt*color2:                  S_green
+DURxvt*color3:                  S_yellow
+DURxvt*color4:                  S_blue
+DURxvt*color5:                  S_magenta
+DURxvt*color6:                  S_cyan
+DURxvt*color7:                  S_base2
+DURxvt*color9:                  S_orange
+DURxvt*color8:                  S_base03
+DURxvt*color10:                 S_base01
+DURxvt*color11:                 S_base00
+DURxvt*color12:                 S_base0
+DURxvt*color13:                 S_violet
+DURxvt*color14:                 S_base1
+DURxvt*color15:                 S_base3
+
+LURxvt*background:             LS_base03
+LURxvt*foreground:             LS_base0
+LURxvt*fading:                  40
+LURxvt*fadeColor:              LS_base03
+LURxvt*cursorColor:            LS_base1
+LURxvt*pointerColorBackground: LS_base01
+LURxvt*pointerColorForeground: LS_base1
+
+LURxvt*color0:                 LS_base02
+LURxvt*color1:                 S_red
+LURxvt*color2:                 S_green
+LURxvt*color3:                 S_yellow
+LURxvt*color4:                 S_blue
+LURxvt*color5:                 S_magenta
+LURxvt*color6:                 S_cyan
+LURxvt*color7:                 LS_base2
+LURxvt*color9:                 S_orange
+LURxvt*color8:                 LS_base03
+LURxvt*color10:                LS_base01
+LURxvt*color11:                LS_base00
+LURxvt*color12:                LS_base0
+LURxvt*color13:                S_violet
+LURxvt*color14:                LS_base1
+LURxvt*color15:                LS_base3

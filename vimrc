@@ -2,6 +2,8 @@ call pathogen#infect()
 call pathogen#helptags()
 set nocompatible
 filetype plugin on
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 map <C-x><C-b> :BufExplorer<CR>
 
 syntax on
@@ -11,6 +13,8 @@ syntax on
 set background=dark
 colorscheme solarized
 call togglebg#map("<F5>")
+
+Bundle 'tpope/vim-fugitive'
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
