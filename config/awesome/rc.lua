@@ -395,7 +395,7 @@ awful.rules.rules = {
     { rule = { instance = "codekonsole" },
       callback = function(c) c:tags({tags[1][1]}) end},
     -- Set urxvt to work tag and email tag
-    { rule = { instance = "codeurxvt" },
+    { rule = { instance = "LURxvt" },
       callback = function(c) c:tags({tags[1][1], tags[1][2]})
                              awful.client.setslave(c) end},
     -- Set chrome to email tag and coffee tag
@@ -428,7 +428,7 @@ run_once("keynav", "keynav.awesome")
 run_once("xscreensaver", "xscreensaver.awesome")
 run_once("synersys -a localhost", "synersys.awesome")
 run_once("runtmux", "runtmux.awesome")
-run_once("urxvt -name codeurxvt -e tmx work 2", "codeurxvt.awesome")
+run_once("urxvt -name LURxvt -e tmx work 2", "LURxvt.awesome")
 run_once("konsole -name codekonsole -e tmx work 1", "konsole.awesome")
 run_once("chromium", "chromium.awesome")
 run_once("google-chrome", "google-chrome.awesome")
