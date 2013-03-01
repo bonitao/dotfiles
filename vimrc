@@ -15,6 +15,7 @@ colorscheme solarized
 call togglebg#map("<F5>")
 
 Bundle 'tpope/vim-fugitive'
+Bundle 'altercation/vim-colors-solarized'
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
