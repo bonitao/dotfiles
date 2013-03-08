@@ -16,6 +16,10 @@ call togglebg#map("<F5>")
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'stephenmckinney/vim-solarized-powerline'
+let g:Powerline_theme='short'
+let g:Powerline_colorscheme='solarized16'
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
