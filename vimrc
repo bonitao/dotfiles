@@ -6,6 +6,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 map <C-x><C-b> :BufExplorer<CR>
 
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'stephenmckinney/vim-solarized-powerline'
 syntax on
 " Needed for chrome secure shell only
 " let g:solarized_termcolors=256
@@ -15,11 +18,14 @@ colorscheme solarized
 call togglebg#map("<F5>")
 
 Bundle 'tpope/vim-fugitive'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'stephenmckinney/vim-solarized-powerline'
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-surround'
 let g:Powerline_theme='short'
 let g:Powerline_colorscheme='solarized16'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'pthrasher/conqueterm-vim'
+Bundle 'xolox/vim-session'
+Bundle 'godlygeek/tabular'
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
