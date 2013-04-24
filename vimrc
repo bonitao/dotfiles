@@ -6,9 +6,13 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 map <C-x><C-b> :BufExplorer<CR>
 
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'stephenmckinney/vim-solarized-powerline'
+let g:Powerline_theme='short'
+let g:Powerline_colorscheme='solarized16_light'
+let g:Powerline_symbols='fancy'
+
 syntax on
 " Needed for chrome secure shell only
 " let g:solarized_termcolors=256
@@ -20,9 +24,8 @@ call togglebg#map("<F5>")
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-surround'
-let g:Powerline_theme='short'
-let g:Powerline_colorscheme='solarized16'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
 Bundle 'pthrasher/conqueterm-vim'
 Bundle 'xolox/vim-session'
 Bundle 'godlygeek/tabular'
@@ -31,7 +34,6 @@ Bundle 'godlygeek/tabular'
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show unicode glyphs
-let g:Powerline_symbols='fancy'
 
 let g:neocomplcache_enable_at_startup = 1
 " http://superuser.com/questions/40378/how-to-make-vims-auto-complete-behave-like-bashs-default-auto-complete
