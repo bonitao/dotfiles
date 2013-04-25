@@ -21,14 +21,18 @@ set background=dark
 colorscheme solarized
 call togglebg#map("<F5>")
 
+Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-surround'
+let g:ycm_confirm_extra_conf=0
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'pthrasher/conqueterm-vim'
 Bundle 'xolox/vim-session'
 Bundle 'godlygeek/tabular'
+Bundle 'mileszs/ack'
+Bundle 'maxbrunsfeld/vim-yankstack'
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
