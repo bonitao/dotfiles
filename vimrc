@@ -31,7 +31,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'pthrasher/conqueterm-vim'
 Bundle 'xolox/vim-session'
 Bundle 'godlygeek/tabular'
-Bundle 'mileszs/ack'
+Bundle 'mileszs/ack.vim'
 Bundle 'maxbrunsfeld/vim-yankstack'
 
 " Requirements for vim powerline. Don't bother repeating.
