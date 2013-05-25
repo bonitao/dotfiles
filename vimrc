@@ -33,6 +33,7 @@ Bundle 'xolox/vim-session'
 Bundle 'godlygeek/tabular'
 Bundle 'mileszs/ack.vim'
 Bundle 'maxbrunsfeld/vim-yankstack'
+Bundle 'airblade/vim-gitgutter'
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
