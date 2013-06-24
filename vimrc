@@ -27,6 +27,7 @@ Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-surround'
 let g:ycm_confirm_extra_conf=0
 Bundle 'Valloric/YouCompleteMe'
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 Bundle 'scrooloose/syntastic'
 Bundle 'pthrasher/conqueterm-vim'
 Bundle 'xolox/vim-session'
