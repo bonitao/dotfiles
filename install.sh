@@ -14,7 +14,7 @@ olddir=$(TMPDIR=~ mktemp -d -t .dotfiles_home.XXXXXX)
 olddir2=$(TMPDIR=~ mktemp -d -t .dotfiles.XXXXXX)
 mv -f $dir $olddir2
 # list of files/folders to symlink in homedir
-files="$(ls $PWD|grep -v install.sh| grep -v README.md | grep -v config | grep -v "^.$" | grep -v ".local$")"
+files="$(ls $PWD|grep -v install.sh| grep -v README.md | grep -v config | grep -v ^.$)"
 ##########
 
 # create dotfiles_old in homedir
@@ -31,6 +31,9 @@ for file in $files; do
     test -f ~/.$file && mv -f ~/.$file $olddir
     echo "Creating symlink to $dir/$file -> ~/.$file."
     ln -s $dir/$file ~/.$file
+done
+for local_file in bashrc emacs vimrc zshenv; do
+  touch ~/.${local_file}.local
 done
 # Special case .config for lazyness preventing touching other apps
 mkdir -p ~/.config/awesome
