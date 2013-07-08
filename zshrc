@@ -14,7 +14,7 @@ fi
 export DEFAULT_USER=davi
 bindkey -s "\C-j" " 2>&1|less\C-m"
 setopt inc_append_history
-source ${ZDOTDIR:-$HOME}/.zsh/git-prompt/zshrc.sh
+#source ${ZDOTDIR:-$HOME}/.zsh/git-prompt/zshrc.sh
 export REPORTTIME=2
 setopt prompt_subst
 #local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
