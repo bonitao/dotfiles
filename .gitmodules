@@ -22,6 +22,3 @@
 [submodule "kde/share/apps/konsole"]
 	path = kde/share/apps/konsole
 	url = git://github.com/phiggins/konsole-colors-solarized.git
-[submodule "vim/bundle/vundle"]
-	path = vim/bundle/vundle
-	url = https://github.com/gmarik/vundle.git

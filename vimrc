@@ -22,6 +22,7 @@ colorscheme solarized
 call togglebg#map("<F5>")
 
 Bundle 'gmarik/vundle'
+Bundle 'flazz/vim-colorschemes'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-surround'
