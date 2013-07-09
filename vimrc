@@ -7,18 +7,25 @@ call vundle#rc()
 map <C-x><C-b> :BufExplorer<CR>
 
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'stephenmckinney/vim-solarized-powerline'
+"Bundle 'altercation/vim-colors-solarized'
+"Bundle 'stephenmckinney/vim-solarized-powerline'
+"let g:Powerline_colorscheme='solarized16_light'
 let g:Powerline_theme='short'
-let g:Powerline_colorscheme='solarized16_light'
 let g:Powerline_symbols='fancy'
 
 syntax on
 " Needed for chrome secure shell only
 " let g:solarized_termcolors=256
 " let g:solarized_termtrans=1
+" let g:solarized_termcolors=256 "very strange results on iterm2
+" let g:solarized_contrast="high"
+" let g:solarized_visibility="high"
+" if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
+"  color solarized                 " load a colorscheme
+" endif
+
 set background=dark
-colorscheme solarized
+colorscheme tango
 call togglebg#map("<F5>")
 
 Bundle 'gmarik/vundle'
@@ -59,14 +66,6 @@ nnoremap <leader><space> :noh<cr>
 " https://github.com/spf13/spf13-vim/blob/3.0/.vimrc
 set history=1000 " Store a ton of history (default is 20)
 set hidden       " allow buffer switching without saving"
-"set background=dark
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256 "very strange results on iterm2
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
-"  color solarized                 " load a colorscheme
-"endif
 
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.

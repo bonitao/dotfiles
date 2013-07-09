@@ -53,8 +53,10 @@ URxvt*color5: #ce5d5a
 !(6 is for function color in python)
 URxvt*color6: #87ff87
 
-DURxvt*faceName:     xft:Inconsolata for Powerline
-DURxvt*font:     xft:Inconsolata for Powerline
+!DURxvt*faceName:     xft:Inconsolata for Powerline
+!DURxvt*font:     xft:Inconsolata for Powerline
+DURxvt*faceName:     xft:PragmataPro
+DURxvt*font:     xft:PragmataPro
 DURxvt*faceSize:     12
 DURxvt*faceSize1:    8
 DURxvt*faceSize2:    9
@@ -73,8 +75,10 @@ DURxvt*colorULMode: on
 DURxvt*dynamicColors: off
 DURxvt*highlightSelection: true
 
-LURxvt*faceName:     xft:Inconsolata for Powerline
-LURxvt*font:     xft:Inconsolata for Powerline
+!LURxvt*faceName:     xft:Inconsolata for Powerline
+!LURxvt*font:     xft:Inconsolata for Powerline
+LURxvt*faceName:     xft:PragmataPro
+LURxvt*font:     xft:PragmataPro
 LURxvt*faceSize:     12
 LURxvt*faceSize1:    8
 LURxvt*faceSize2:    9
@@ -95,8 +99,10 @@ LURxvt*highlightSelection: true
 
 ! Zenburn theme
 ! http://dotfiles.org/~jbromley/.Xresources
-ZURxvt*faceName:     xft:Inconsolata for Powerline
-ZURxvt*font:     xft:Inconsolata for Powerline
+!ZURxvt*faceName:     xft:Inconsolata for Powerline
+!ZURxvt*font:     xft:Inconsolata for Powerline
+ZURxvt*faceName:     xft:PragmataPro
+ZURxvt*font:     xft:PragmataPro
 ZURxvt*inheritPixmap: true
 ZURxvt*tintColor: gray30
 ZURxvt.internalBorder: 0
@@ -132,8 +138,17 @@ ZURxvt*color15: #ffffff
 
 ! Tango theme
 ! http://yorikvanhavre.deviantart.com/art/urxvt-tango-theme-113968183
-TURxvt*faceName:     xft:Inconsolata for Powerline
-TURxvt*font:     xft:Inconsolata for Powerline
+!TURxvt*faceName:     xft:Inconsolata for Powerline
+!TURxvt*font:     xft:Inconsolata for Powerline
+TURxvt*faceName:     xft:PragmataPro
+TURxvt*font:     xft:PragmataPro
+TURxvt*faceSize:     12
+TURxvt*faceSize1:    8
+TURxvt*faceSize2:    9
+TURxvt*faceSize3:    10
+TURxvt*faceSize4:    12
+TURxvt*faceSize5:    16
+TURxvt*faceSize6:    24
 TURxvt*foreground: #f2f2f2
 TURxvt*background: #101010
 TURxvt*color0: #101010
