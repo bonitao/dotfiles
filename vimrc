@@ -8,9 +8,8 @@ map <C-x><C-b> :BufExplorer<CR>
 
 Bundle 'Lokaltog/vim-powerline'
 "Bundle 'altercation/vim-colors-solarized'
-"Bundle 'stephenmckinney/vim-solarized-powerline'
-"let g:Powerline_colorscheme='solarized16_light'
-let g:Powerline_theme='short'
+let g:Powerline_colorscheme='solarized256'
+let g:Powerline_theme='solarized256'
 let g:Powerline_symbols='fancy'
 
 syntax on
@@ -33,11 +32,13 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-surround'
-let g:ycm_confirm_extra_conf=0
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 Bundle 'scrooloose/syntastic'
 Bundle 'pthrasher/conqueterm-vim'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-colorscheme-switcher'
+let g:session_autoload = 'no'
 Bundle 'xolox/vim-session'
 Bundle 'godlygeek/tabular'
 Bundle 'mileszs/ack.vim'
