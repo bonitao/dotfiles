@@ -93,6 +93,70 @@ LURxvt*colorULMode: on
 LURxvt*dynamicColors: off
 LURxvt*highlightSelection: true
 
+! Zenburn theme
+! http://dotfiles.org/~jbromley/.Xresources
+ZURxvt*faceName:     xft:Inconsolata for Powerline
+ZURxvt*font:     xft:Inconsolata for Powerline
+ZURxvt*inheritPixmap: true
+ZURxvt*tintColor: gray30
+ZURxvt.internalBorder: 0
+ZURxvt.jumpScroll: true
+ZURxvt.perl-ext-common: default,matcher,searchable-scrollback
+ZURxvt.pointerBlank: true
+ZURxvt.saveLines: 4000
+ZURxvt.secondaryScroll: true
+ZURxvt.scrollBar: false
+ZURxvt.scrollTtyKeypress: true
+ZURxvt.scrollWithBuffer: true
+ZURxvt*background: #000010
+ZURxvt*foreground: Wheat
+ZURxvt*cursorColor: magenta
+ZURxvt*colorUL: #c5f779
+ZURxvt*underlineColor: #c5f779
+ZURxvt*color0: #000000
+ZURxvt*color1: #9e1828
+ZURxvt*color2: #aece92
+ZURxvt*color3: #968a38
+ZURxvt*color4: #414171
+ZURxvt*color5: #963c59
+ZURxvt*color6: #418179
+ZURxvt*color7: #bebebe
+ZURxvt*color8: #666666
+ZURxvt*color9: #cf6171
+ZURxvt*color10: #c5f779
+ZURxvt*color11: #fff796
+ZURxvt*color12: #4186be
+ZURxvt*color13: #cf9ebe
+ZURxvt*color14: #71bebe
+ZURxvt*color15: #ffffff
+
+! Tango theme
+! http://yorikvanhavre.deviantart.com/art/urxvt-tango-theme-113968183
+TURxvt*faceName:     xft:Inconsolata for Powerline
+TURxvt*font:     xft:Inconsolata for Powerline
+TURxvt*foreground: #f2f2f2
+TURxvt*background: #101010
+TURxvt*color0: #101010
+TURxvt*color1: #f13a21
+TURxvt*color2: #93f91d
+TURxvt*color3: #ffd00a
+TURxvt*color4: #004f9e
+TURxvt*color5: #ec0048
+TURxvt*color6: #2aa7e7
+TURxvt*color7: #f2f2f2
+TURxvt*color8: #1d202f
+TURxvt*color9: #ff361e
+TURxvt*color10: #ffc005
+TURxvt*color11: #93ff00
+TURxvt*color12: #0071ff
+TURxvt*color13: #ef0051
+TURxvt*color14: #4bb8fd
+TURxvt*color15: #a020f0
+TURxvt*transparent: true
+TURxvt*shading: 50
+TURxvt*fading: 50
+TURxvt*scrollBar: false
+
 ! Solarized color scheme for the X Window System
 !
 ! http://ethanschoonover.com/solarized
