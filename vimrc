@@ -46,8 +46,8 @@ Bundle 'airblade/vim-gitgutter'
 
 " From https://github.com/saghul/vim-colortoggle
 let g:default_background_type = "dark"
-let g:dark_colorscheme = "mustang"
-let g:light_colorscheme = "pyte"
+let g:dark_colorscheme = "darktango"
+let g:light_colorscheme = "tango"
 map <silent><F11> :ToggleBg<CR>
 
 " Requirements for vim powerline. Don't bother repeating.
