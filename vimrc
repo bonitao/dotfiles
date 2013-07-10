@@ -23,11 +23,8 @@ syntax on
 "  color solarized                 " load a colorscheme
 " endif
 
-set background=dark
-colorscheme tango
-call togglebg#map("<F5>")
-
 Bundle 'gmarik/vundle'
+Bundle 'saghul/vim-colortoggle'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
@@ -39,11 +36,19 @@ Bundle 'pthrasher/conqueterm-vim'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-colorscheme-switcher'
 let g:session_autoload = 'no'
+let g:session_autosave = 'no'
 Bundle 'xolox/vim-session'
 Bundle 'godlygeek/tabular'
 Bundle 'mileszs/ack.vim'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'airblade/vim-gitgutter'
+
+
+" From https://github.com/saghul/vim-colortoggle
+let g:default_background_type = "dark"
+let g:dark_colorscheme = "mustang"
+let g:light_colorscheme = "pyte"
+map <silent><F11> :ToggleBg<CR>
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
