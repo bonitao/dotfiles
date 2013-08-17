@@ -6,11 +6,8 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 map <C-x><C-b> :BufExplorer<CR>
 
-Bundle 'Lokaltog/vim-powerline'
-"Bundle 'altercation/vim-colors-solarized'
-let g:Powerline_colorscheme='solarized256'
-let g:Powerline_theme='solarized256'
-let g:Powerline_symbols='fancy'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'bling/vim-airline'
 
 syntax on
 " Needed for chrome secure shell only
