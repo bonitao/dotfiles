@@ -54,7 +54,7 @@ Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'kien/ctrlp.vim'
 Bundle 'a.vim'
 Bundle 'bufexplorer.zip'
-Bundle 'bufkill'
+Bundle 'bufkill.vim'
 
 
 
