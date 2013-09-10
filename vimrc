@@ -36,6 +36,8 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
 " Bundle 'Valloric/YouCompleteMe'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 Bundle 'scrooloose/syntastic'
@@ -45,10 +47,15 @@ Bundle 'xolox/vim-colorscheme-switcher'
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
 Bundle 'xolox/vim-session'
+" Bundle 'vim-scripts/a.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'mileszs/ack.vim'
 Bundle 'maxbrunsfeld/vim-yankstack'
-Bundle 'airblade/vim-gitgutter'
+Bundle 'kien/ctrlp.vim'
+Bundle 'a.vim'
+Bundle 'bufexplorer.zip'
+Bundle 'bufkill'
+
 
 
 " From https://github.com/saghul/vim-colortoggle
