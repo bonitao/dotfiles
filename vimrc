@@ -101,9 +101,8 @@ let g:ctrlp_max_depth = 10
 let g:ctrlp_max_files = 50000
 let g:NERDSpaceDelims = 1
 so ~/.vimrc.local
-au BufRead,BufNewFile *.go set nolist
-au BufRead,BufNewFile *.go set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 au BufRead,BufNewFile *.go set filetype=go
+autocmd FileType go setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2 list lcs=tab:\ \ 
 
 " No prompts.
 " http://od-eon.com/blogs/stefan/reloading-externally-modified-buffers-vim/
