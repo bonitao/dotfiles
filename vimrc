@@ -1,5 +1,3 @@
-call pathogen#infect()
-call pathogen#helptags()
 set nocompatible
 filetype plugin on
 set rtp+=~/.vim/bundle/vundle/

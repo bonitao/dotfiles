@@ -14,10 +14,11 @@ fi
 export DEFAULT_USER=davi
 bindkey -s "\C-j" " 2>&1|less\C-m"
 setopt INC_APPEND_HISTORY
-unsetopt SHARED_HISTORY
+unsetopt SHARE_HISTORY
 #source ${ZDOTDIR:-$HOME}/.zsh/git-prompt/zshrc.sh
 export REPORTTIME=2
 setopt prompt_subst
+setopt rmstarsilent
 #local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
 #if [ $SSH_CONNECTION ]; then SSH="%n@%m "; else SSH=""; fi
 #PROMPT='$SSH%4(c:$(pwd | sed -e "s#^$HOME#~#" | sed -e "s#\([^/]\)[^/]*/#\1/#g"):%3c) %# '
