@@ -22,6 +22,7 @@ URxvt*colorUL: yellow
 URxvt*colorULMode: on
 URxvt*dynamicColors: off
 URxvt*highlightSelection: true
+URxvt.fading: 5
 
 !———————————————————-
 ! Colorscheme based on the gvim colorscheme desert
@@ -168,8 +169,8 @@ TURxvt*color13: #ef0051
 TURxvt*color14: #4bb8fd
 TURxvt*color15: #a020f0
 TURxvt*transparent: true
-TURxvt*shading: 50
-TURxvt*fading: 50
+TURxvt*shading: 5
+TURxvt*fading: 5
 TURxvt*scrollBar: false
 
 ! Solarized color scheme for the X Window System
@@ -220,7 +221,7 @@ TURxvt*scrollBar: false
 
 DURxvt*background:              S_base03
 DURxvt*foreground:              S_base0
-DURxvt*fading:                  40
+DURxvt*fading:                  5
 DURxvt*fadeColor:               S_base03
 DURxvt*cursorColor:             S_base1
 DURxvt*pointerColorBackground:  S_base01
@@ -245,7 +246,7 @@ DURxvt*color15:                 S_base3
 
 LURxvt*background:             LS_base03
 LURxvt*foreground:             LS_base0
-LURxvt*fading:                  40
+LURxvt*fading:                 5
 LURxvt*fadeColor:              LS_base03
 LURxvt*cursorColor:            LS_base1
 LURxvt*pointerColorBackground: LS_base01

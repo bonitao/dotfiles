@@ -392,7 +392,7 @@ awful.rules.rules = {
     { rule = { class = "amarok" },
       properties = { tag = tags[1][6] } },
     -- Set konsole to hold vim on work tag
-    { rule = { instance = "codekonsole" },
+    { rule = { instance = "LURxvt" },
       callback = function(c) c:tags({tags[1][1]}) end},
     -- Set urxvt to work tag and email tag
     { rule = { instance = "TURxvt" },
@@ -408,7 +408,7 @@ awful.rules.rules = {
       callback = function(c) c:tags({tags[1][3]})
                              awful.client.setslave(c) end},
     -- And a small konsole in coffee tag. Unused for now.
-    { rule = { instance = "shellkonsole" },
+    { rule = { instance = "DURxvt" },
       callback = function(c) c:tags({tags[1][3]})
                              awful.client.setslave(c)
                              awful.tag.viewonly(tags[1][3])
@@ -429,7 +429,7 @@ run_once("xscreensaver", "xscreensaver.awesome")
 run_once("synersys -a localhost", "synersys.awesome")
 run_once("runtmux", "runtmux.awesome")
 run_once("urxvt -name TURxvt -e tmx work 2", "TURxvt.awesome")
-run_once("konsole -name codekonsole -e tmx work 1", "konsole.awesome")
+run_once("urxvt -name LURxvt -e tmx work 1", "LURxvt.awesome")
 run_once("chromium", "chromium.awesome")
 run_once("google-chrome", "google-chrome.awesome")
 run_once("firefox", "firefox.awesome")
