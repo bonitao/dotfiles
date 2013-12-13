@@ -14,6 +14,7 @@ fi
 export DEFAULT_USER=davi
 bindkey -s "\C-j" " 2>&1|less\C-m"
 setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_SPACE
 unsetopt SHARE_HISTORY
 #source ${ZDOTDIR:-$HOME}/.zsh/git-prompt/zshrc.sh
 export REPORTTIME=2
