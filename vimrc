@@ -5,6 +5,10 @@ call vundle#rc()
 map <C-x><C-b> :BufExplorer<CR>
 
 Bundle 'flazz/vim-colorschemes'
+" https://github.com/chriskempson/base16-vim
+Bundle 'chriskempson/base16-vim'
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-default
 "let g:airline_left_sep = '⮀'
 "let g:airline_left_sep = '»'
 let g:airline_left_alt_sep = '⮁'
@@ -54,13 +58,11 @@ Bundle 'a.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'bufkill.vim'
 
-
-
 " From https://github.com/saghul/vim-colortoggle
-let g:default_background_type = "dark"
-let g:dark_colorscheme = "darktango"
-let g:light_colorscheme = "tango"
-map <silent><F11> :ToggleBg<CR>
+" let g:default_background_type = "dark"
+" let g:dark_colorscheme = "darktango"
+" let g:light_colorscheme = "tango"
+" map <silent><F11> :ToggleBg<CR>
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility

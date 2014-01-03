@@ -392,7 +392,7 @@ awful.rules.rules = {
     { rule = { class = "amarok" },
       properties = { tag = tags[1][6] } },
     -- Set konsole to hold vim on work tag
-    { rule = { instance = "LURxvt" },
+    { rule = { instance = "LB16URxvt" },
       callback = function(c) c:tags({tags[1][1]}) end},
     -- Set urxvt to work tag and email tag
     { rule = { instance = "TURxvt" },
@@ -429,7 +429,7 @@ run_once("xscreensaver", "xscreensaver.awesome")
 run_once("synersys -a localhost", "synersys.awesome")
 run_once("runtmux", "runtmux.awesome")
 run_once("urxvt -name TURxvt -e tmx work 2", "TURxvt.awesome")
-run_once("urxvt -name LURxvt -e tmx work 1", "LURxvt.awesome")
+run_once("urxvt -name LB16URxvt -e tmx work 1", "LB16URxvt.awesome")
 run_once("chromium", "chromium.awesome")
 run_once("google-chrome", "google-chrome.awesome")
 run_once("firefox", "firefox.awesome")

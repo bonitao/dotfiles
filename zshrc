@@ -25,3 +25,7 @@ setopt rmstarsilent
 #PROMPT='$SSH%4(c:$(pwd | sed -e "s#^$HOME#~#" | sed -e "s#\([^/]\)[^/]*/#\1/#g"):%3c) %# '
 #RPROMPT='$(git_super_status) ${smiley}'
 
+# https://github.com/chriskempson/base16-shell
+BASE16_SCHEME="default"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
