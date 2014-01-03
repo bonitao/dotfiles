@@ -38,6 +38,7 @@ done
 # Special case .config for lazyness preventing touching other apps
 mkdir -p ~/.config/awesome
 cp -a config/awesome/rc.lua ~/.config/awesome/
+cp -a config/base16-shell ~/.config/base16-shell
 cp -a prompt_davi_setup ~/.zprezto/modules/prompt/functions/
 
 echo "Please delete backup $olddir and $olddir2 if everything is fine."
