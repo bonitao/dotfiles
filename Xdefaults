@@ -172,6 +172,65 @@ TURxvt*scrollBar: false
 
 ! Base16 theme
 ! https://github.com/chriskempson/base16-xresources
+! base16-default.dark.xresources
+#define base00 #151515
+#define base01 #202020
+#define base02 #303030
+#define base03 #505050
+#define base04 #b0b0b0
+#define base05 #d0d0d0
+#define base06 #e0e0e0
+#define base07 #f5f5f5
+#define base08 #ac4142
+#define base09 #d28445
+#define base0A #f4bf75
+#define base0B #90a959
+#define base0C #75b5aa
+#define base0D #6a9fb5
+#define base0E #aa759f
+#define base0F #8f5536
+
+DB16URxvt*faceName:     xft:PragmataPro
+DB16URxvt*font:     xft:PragmataPro
+DB16URxvt*faceSize:     12
+DB16URxvt*faceSize1:    8
+DB16URxvt*faceSize2:    9
+DB16URxvt*faceSize3:    10
+DB16URxvt*faceSize4:    12
+DB16URxvt*faceSize5:    16
+DB16URxvt*faceSize6:    24
+DB16URxvt*scrollBar: false
+DB16URxvt*transparent: false
+DB16URxvt*depth: 32
+DB16URxvt*termName:  screen-256color
+DB16URxvt*colorMode: on
+DB16URxvt*colorBD: lightyellow
+DB16URxvt*colorUL: yellow
+DB16URxvt*colorULMode: on
+DB16URxvt*dynamicColors: off
+DB16URxvt*highlightSelection: true
+DB16URxvt*foreground:   base05
+DB16URxvt*background:   base00
+DB16URxvt*cursorColor:  base05
+DB16URxvt*color0:       base00
+DB16URxvt*color1:       base08
+DB16URxvt*color2:       base0B
+DB16URxvt*color3:       base0A
+DB16URxvt*color4:       base0D
+DB16URxvt*color5:       base0E
+DB16URxvt*color6:       base0C
+DB16URxvt*color7:       base05
+DB16URxvt*color8:       base03
+DB16URxvt*color9:       base09
+DB16URxvt*color10:      base01
+DB16URxvt*color11:      base02
+DB16URxvt*color12:      base04
+DB16URxvt*color13:      base06
+DB16URxvt*color14:      base0F
+DB16URxvt*color15:      base07
+
+! Base16 theme
+! https://github.com/chriskempson/base16-xresources
 ! base16-default.light.xresources
 #define base00 #151515
 #define base01 #202020
@@ -190,6 +249,25 @@ TURxvt*scrollBar: false
 #define base0E #aa759f
 #define base0F #8f5536
 
+LB16URxvt*faceName:     xft:PragmataPro
+LB16URxvt*font:     xft:PragmataPro
+LB16URxvt*faceSize:     12
+LB16URxvt*faceSize1:    8
+LB16URxvt*faceSize2:    9
+LB16URxvt*faceSize3:    10
+LB16URxvt*faceSize4:    12
+LB16URxvt*faceSize5:    16
+LB16URxvt*faceSize6:    24
+LB16URxvt*scrollBar: false
+LB16URxvt*transparent: false
+LB16URxvt*depth: 32
+LB16URxvt*termName:  screen-256color
+LB16URxvt*colorMode: on
+LB16URxvt*colorBD: lightyellow
+LB16URxvt*colorUL: yellow
+LB16URxvt*colorULMode: on
+LB16URxvt*dynamicColors: off
+LB16URxvt*highlightSelection: true
 LB16URxvt*foreground:   base02
 LB16URxvt*background:   base07
 LB16URxvt*cursorColor:  base02
