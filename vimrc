@@ -5,6 +5,9 @@ call vundle#rc()
 map <C-x><C-b> :BufExplorer<CR>
 
 Bundle 'chriskempson/base16-vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'itchyny/landscape.vim'
+Bundle 'flazz/vim-colorschemes'
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme desert 
 "let g:airline_left_sep = '⮀'
