@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# From davi: all output colors should be different in 256 colors mode. You can
+# do tput colors in the terminal to get the number of colors available.
 # Copyright (C) 2006 by Johannes Zellner, <johannes@zellner.org>
 # modified by mac@calmar.ws to fit my output needs
 # modified by crncosta@carloscosta.org to fit my output needs

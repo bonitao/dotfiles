@@ -6,11 +6,12 @@ map <C-x><C-b> :BufExplorer<CR>
 " http://stackoverflow.com/questions/14635295/vim-takes-a-very-long-time-to-start-up
 set clipboard=exclude:.*
 
-let base16colorspace=256  " Access colors present in 256 colorspace
-" Bundle 'chriskempson/base16-vim'
+Bundle 'vim-scripts/ScrollColors'
+Bundle 'godlygeek/csapprox'
+Bundle 'chriskempson/base16-vim'
 " Bundle 'itchyny/landscape.vim'
 " Molokai fixes side effects
-Bundle 'tomasr/molokai'
+" Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'twerth/ir_black'
 set background=dark
@@ -26,8 +27,7 @@ let g:airline_paste_symbol = 'ρ'
 let g:airline_linecolumn_prefix = '⭡'
 let g:airline_whitespace_symbol = 'Ξ'
 let g:airline_theme = 'light'
-Bundle 'bling/vim-airline'
-Bundle 'vim-scripts/ScrollColors'
+" Bundle 'bling/vim-airline'
 
 syntax on
 " Needed for chrome secure shell only
