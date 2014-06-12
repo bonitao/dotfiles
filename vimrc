@@ -3,15 +3,20 @@ filetype plugin on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 map <C-x><C-b> :BufExplorer<CR>
+" http://stackoverflow.com/questions/14635295/vim-takes-a-very-long-time-to-start-up
+set clipboard=exclude:.*
 
-Bundle 'chriskempson/base16-vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'itchyny/landscape.vim'
-Bundle 'jonathanfilip/vim-lucius'
-Bundle 'tomasr/molokai'
+" Bundle 'chriskempson/base16-vim'
+" Bundle 'altercation/vim-colors-solarized'
+" Bundle 'itchyny/landscape.vim'
+" Bundle 'jonathanfilip/vim-lucius'
+" Bundle 'tomasr/molokai'
+" Bundle 'nanotech/jellybeans.vim'
+Bundle 'twerth/ir_black'
+Bundle 'w0ng/vim-hybrid'
 Bundle 'nanotech/jellybeans.vim'
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme lucius 
+set background=dark
 "let g:airline_left_sep = '⮀'
 "let g:airline_left_sep = '»'
 let g:airline_left_alt_sep = '⮁'
@@ -22,6 +27,7 @@ let g:airline_readonly_symbol = '⭤'
 let g:airline_paste_symbol = 'ρ'
 let g:airline_linecolumn_prefix = '⭡'
 let g:airline_whitespace_symbol = 'Ξ'
+let g:airline_theme = 'jellybeans'
 Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/ScrollColors'
 
@@ -103,3 +109,5 @@ autocmd FileType go setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2 li
 " http://od-eon.com/blogs/stefan/reloading-externally-modified-buffers-vim/
 set autoread
 
+colorscheme jellybeans
+colorscheme ir_black
