@@ -9,14 +9,12 @@ set clipboard=exclude:.*
 let base16colorspace=256  " Access colors present in 256 colorspace
 " Bundle 'chriskempson/base16-vim'
 " Bundle 'itchyny/landscape.vim'
-" Bundle 'jonathanfilip/vim-lucius'
-" Bundle 'tomasr/molokai'
-" Bundle 'nanotech/jellybeans.vim'
+" Molokai fixes side effects
+Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'twerth/ir_black'
-Bundle 'w0ng/vim-hybrid'
 set background=dark
-colorscheme ir_black
+colorscheme moria
 "let g:airline_left_sep = '⮀'
 "let g:airline_left_sep = '»'
 let g:airline_left_alt_sep = '⮁'
