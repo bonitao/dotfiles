@@ -11,9 +11,11 @@ Bundle 'godlygeek/csapprox'
 Bundle 'chriskempson/base16-vim'
 " Bundle 'itchyny/landscape.vim'
 " Molokai fixes side effects
-" Bundle 'tomasr/molokai'
+Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'twerth/ir_black'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'jonathanfilip/vim-lucius'
 set background=dark
 colorscheme moria
 "let g:airline_left_sep = '⮀'
@@ -26,8 +28,9 @@ let g:airline_readonly_symbol = '⭤'
 let g:airline_paste_symbol = 'ρ'
 let g:airline_linecolumn_prefix = '⭡'
 let g:airline_whitespace_symbol = 'Ξ'
-let g:airline_theme = 'light'
-" Bundle 'bling/vim-airline'
+" Good theme if not switching automagically
+" let g:airline_theme = 'light'
+Bundle 'bling/vim-airline'
 
 syntax on
 " Needed for chrome secure shell only
