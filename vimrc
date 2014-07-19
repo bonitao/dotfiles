@@ -3,12 +3,21 @@ filetype plugin on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 map <C-x><C-b> :BufExplorer<CR>
+" http://stackoverflow.com/questions/14635295/vim-takes-a-very-long-time-to-start-up
+set clipboard=exclude:.*
 
-Bundle 'flazz/vim-colorschemes'
-" https://github.com/chriskempson/base16-vim
+Bundle 'vim-scripts/ScrollColors'
+Bundle 'godlygeek/csapprox'
 Bundle 'chriskempson/base16-vim'
-let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-default
+" Bundle 'itchyny/landscape.vim'
+" Molokai fixes side effects
+Bundle 'tomasr/molokai'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'twerth/ir_black'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'jonathanfilip/vim-lucius'
+set background=dark
+colorscheme moria
 "let g:airline_left_sep = '⮀'
 "let g:airline_left_sep = '»'
 let g:airline_left_alt_sep = '⮁'
@@ -19,6 +28,8 @@ let g:airline_readonly_symbol = '⭤'
 let g:airline_paste_symbol = 'ρ'
 let g:airline_linecolumn_prefix = '⭡'
 let g:airline_whitespace_symbol = 'Ξ'
+" Good theme if not switching automagically
+" let g:airline_theme = 'light'
 Bundle 'bling/vim-airline'
 
 syntax on
@@ -33,8 +44,6 @@ syntax on
 " endif
 
 Bundle 'gmarik/vundle'
-Bundle 'saghul/vim-colortoggle'
-Bundle 'flazz/vim-colorschemes'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-surround'
@@ -45,7 +54,6 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 Bundle 'scrooloose/syntastic'
 Bundle 'pthrasher/conqueterm-vim'
 Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-colorscheme-switcher'
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
 Bundle 'xolox/vim-session'
@@ -58,12 +66,6 @@ Bundle 'a.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'bufkill.vim'
 Bundle 'ConradIrwin/vim-bracketed-paste'
-
-" From https://github.com/saghul/vim-colortoggle
-" let g:default_background_type = "dark"
-" let g:dark_colorscheme = "darktango"
-" let g:light_colorscheme = "tango"
-" map <silent><F11> :ToggleBg<CR>
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
@@ -108,6 +110,4 @@ autocmd FileType go setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2 li
 " No prompts.
 " http://od-eon.com/blogs/stefan/reloading-externally-modified-buffers-vim/
 set autoread
-
 set shortmess+=A "Suppress the message when editing a file with a SWAP file
-
