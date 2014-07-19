@@ -57,6 +57,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'a.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'bufkill.vim'
+Bundle 'ConradIrwin/vim-bracketed-paste'
 
 " From https://github.com/saghul/vim-colortoggle
 " let g:default_background_type = "dark"
@@ -107,4 +108,6 @@ autocmd FileType go setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2 li
 " No prompts.
 " http://od-eon.com/blogs/stefan/reloading-externally-modified-buffers-vim/
 set autoread
+
+set shortmess+=A "Suppress the message when editing a file with a SWAP file
 
