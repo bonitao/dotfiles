@@ -7,6 +7,7 @@ map <C-x><C-b> :BufExplorer<CR>
 set clipboard=exclude:.*
 
 Bundle 'vim-scripts/ScrollColors'
+Bundle 'vim-scripts/YankRing.vim'
 Bundle 'godlygeek/csapprox'
 Bundle 'chriskempson/base16-vim'
 " Bundle 'itchyny/landscape.vim'
@@ -111,4 +112,7 @@ autocmd FileType go setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2 li
 " No prompts.
 " http://od-eon.com/blogs/stefan/reloading-externally-modified-buffers-vim/
 set autoread
-set shortmess+=A "Suppress the message when editing a file with a SWAP file
+" http://items.sjbach.com/319/configuring-vim-right
+set shortmess+=aAtI "Suppress the message when editing a file with a SWAP file
+set visualbell
+set ruler
