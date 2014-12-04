@@ -1,22 +1,23 @@
 set nocompatible
 filetype plugin on
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 map <C-x><C-b> :BufExplorer<CR>
 " http://stackoverflow.com/questions/14635295/vim-takes-a-very-long-time-to-start-up
 set clipboard=exclude:.*
 
-Bundle 'vim-scripts/ScrollColors'
-Bundle 'vim-scripts/YankRing.vim'
-Bundle 'godlygeek/csapprox'
-Bundle 'chriskempson/base16-vim'
-" Bundle 'itchyny/landscape.vim'
+Plugin 'vim-scripts/ScrollColors'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'godlygeek/csapprox'
+Plugin 'chriskempson/base16-vim'
+" Plugin 'itchyny/landscape.vim'
 " Molokai fixes side effects
-Bundle 'tomasr/molokai'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'twerth/ir_black'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'jonathanfilip/vim-lucius'
+Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'twerth/ir_black'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'jonathanfilip/vim-lucius'
 set background=dark
 colorscheme moria
 "let g:airline_left_sep = '⮀'
@@ -31,7 +32,7 @@ let g:airline_linecolumn_prefix = '⭡'
 let g:airline_whitespace_symbol = 'Ξ'
 " Good theme if not switching automagically
 " let g:airline_theme = 'light'
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
 syntax on
 " Needed for chrome secure shell only
@@ -44,30 +45,28 @@ syntax on
 "  color solarized                 " load a colorscheme
 " endif
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-obsession'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-" Bundle 'Valloric/YouCompleteMe'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-obsession'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-Bundle 'scrooloose/syntastic'
-Bundle 'pthrasher/conqueterm-vim'
-Bundle 'xolox/vim-misc'
+Plugin 'pthrasher/conqueterm-vim'
+Plugin 'xolox/vim-misc'
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
-Bundle 'xolox/vim-session'
-" Bundle 'vim-scripts/a.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'mileszs/ack.vim'
-Bundle 'maxbrunsfeld/vim-yankstack'
-Bundle 'kien/ctrlp.vim'
-Bundle 'a.vim'
-Bundle 'bufexplorer.zip'
-Bundle 'bufkill.vim'
-Bundle 'ConradIrwin/vim-bracketed-paste'
+Plugin 'xolox/vim-session'
+Plugin 'godlygeek/tabular'
+Plugin 'mileszs/ack.vim'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'kien/ctrlp.vim'
+Plugin 'a.vim'
+Plugin 'bufexplorer.zip'
+Plugin 'bufkill.vim'
+Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
