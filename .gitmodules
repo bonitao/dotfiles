@@ -7,9 +7,6 @@
 [submodule "kde/share/apps/konsole"]
 	path = kde/share/apps/konsole
 	url = git://github.com/phiggins/konsole-colors-solarized.git
-[submodule "vim/bundle/vundle"]
-	path = vim/bundle/vundle
-	url = http://github.com/gmarik/vundle.git
 [submodule "config/base16-shell"]
 	path = config/base16-shell
 	url = https://github.com/chriskempson/base16-shell
