@@ -1,25 +1,27 @@
 set nocompatible
 filetype plugin on
-set rtp+=~/.vim/bundle/vundle/
+set guifont=PragmataPro:h18
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 map <C-x><C-b> :BufExplorer<CR>
 " http://stackoverflow.com/questions/14635295/vim-takes-a-very-long-time-to-start-up
 set clipboard=exclude:.*
 
+" Color schemes and related plugins
 Plugin 'vim-scripts/ScrollColors'
-Plugin 'vim-scripts/YankRing.vim'
 Plugin 'godlygeek/csapprox'
 Plugin 'chriskempson/base16-vim'
-" Plugin 'itchyny/landscape.vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'itchyny/landscape.vim'
+Plugin 'moria'
 " Molokai fixes side effects
 Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'twerth/ir_black'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'jonathanfilip/vim-lucius'
-set background=dark
-colorscheme moria
+
 "let g:airline_left_sep = '⮀'
 "let g:airline_left_sep = '»'
 let g:airline_left_alt_sep = '⮁'
@@ -45,7 +47,6 @@ syntax on
 "  color solarized                 " load a colorscheme
 " endif
 
-Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-surround'
@@ -67,6 +68,12 @@ Plugin 'a.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'bufkill.vim'
 Plugin 'ConradIrwin/vim-bracketed-paste'
+call vundle#end()
+
+set background=dark
+colorscheme moria
+" transparency
+hi Normal guibg=NONE ctermbg=NONE
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
