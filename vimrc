@@ -66,8 +66,8 @@ Plugin 'rking/ag.vim'  " better ack/grep
 Plugin 'sjl/gundo.vim'
 let g:EasyClipEnableBlackHoleRedirect = 0
 let g:EasyClipUsePasteToggleDefaults = 0
-nmap <c-f> <plug>EasyClipSwapPasteForward
-nmap <c-d> <plug>EasyClipSwapPasteBackwards
+nmap <c-F> <plug>EasyClipSwapPasteForward
+nmap <c-D> <plug>EasyClipSwapPasteBackwards
 Plugin 'svermeulen/vim-easyclip'
 Plugin 'kien/ctrlp.vim'
 Plugin 'a.vim'
