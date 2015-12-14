@@ -14,7 +14,8 @@ set clipboard=exclude:.*
 Plugin 'xolox/vim-misc'  " dependency for colorscheme-switcher
 Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'godlygeek/csapprox'
-Plugin 'chriskempson/base16-vim'
+" base16 never worked for me
+" Plugin 'chriskempson/base16-vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'itchyny/landscape.vim'
 Plugin 'moria'
@@ -25,18 +26,8 @@ Plugin 'twerth/ir_black'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'jonathanfilip/vim-lucius'
 
-"let g:airline_left_sep = '⮀'
-"let g:airline_left_sep = '»'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_branch_prefix = '⭠ '
-let g:airline_readonly_symbol = '⭤'
-let g:airline_paste_symbol = 'ρ'
-let g:airline_linecolumn_prefix = '⭡'
-let g:airline_whitespace_symbol = 'Ξ'
 " Good theme if not switching automagically
-" let g:airline_theme = 'light'
+let g:airline_theme = 'light'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
@@ -49,25 +40,34 @@ nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:pymode_rope_completion = 0
+let g:pymode_rope = 0
 let g:pymode_folding = 0
-Plugin 'klen/python-mode.git'
+" Plugin 'klen/python-mode.git'
+Plugin 'fisadev/vim-isort'
+Plugin 'fatih/vim-go'
+Plugin 'derekwyatt/vim-scala'
+" http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+
 " No real need for syntastic currently
 " Plugin 'scrooloose/syntastic.git'
 Plugin 'pthrasher/conqueterm-vim'
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
 Plugin 'xolox/vim-session'
-Plugin 'godlygeek/tabular'
+" Trying this out instead of vim-tabular
+Plugin 'junegunn/vim-easy-align'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'  " better ack/grep
 Plugin 'sjl/gundo.vim'
 let g:EasyClipEnableBlackHoleRedirect = 0
 let g:EasyClipUsePasteToggleDefaults = 0
-nmap <c-F> <plug>EasyClipSwapPasteForward
-nmap <c-D> <plug>EasyClipSwapPasteBackwards
+nmap <c-f> <plug>EasyClipSwapPasteForward
+nmap <c-d> <plug>EasyClipSwapPasteBackwards
 Plugin 'svermeulen/vim-easyclip'
 Plugin 'kien/ctrlp.vim'
 Plugin 'a.vim'
@@ -76,8 +76,17 @@ Plugin 'bufkill.vim'
 " Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'tyru/vim-altercmd'  " allow remapping q
 Plugin 'ToQoz/gentle_quitman.vim'  " do not quit vim all the time
-call vundle#end()
 
+"Beta
+Plugin 'terryma/vim-smooth-scroll'
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 20, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 20, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 20, 4)<CR>
+" http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
+Plugin 'Shougo/unite.vim'
+Plugin 'airblade/vim-gitgutter'
+call vundle#end()
 " http://robots.thoughtbot.com/faster-grepping-in-vim
 " bind leader * to grep word under cursor
 nmap <leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -95,15 +104,12 @@ AlterCommand GWQ wq
 " hi Normal guibg=NONE ctermbg=NONE
 " set background=dark
 colorscheme ir_black
-" " Needed for chrome secure shell only
- " let g:solarized_termcolors=256
- " let g:solarized_termtrans=1
- " let g:solarized_termcolors=256 "very strange results on iterm2
- " let g:solarized_contrast="high"
- " let g:solarized_visibility="high"
- " if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
-  " colorscheme solarized                 " load a colorscheme
-" endif
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green guifg=darkgreen
+highlight GitGutterChange ctermfg=yellow guifg=darkyellow
+highlight GitGutterDelete ctermfg=red guifg=darkred
+highlight GitGutterChangeDelete ctermfg=yellow guifg=darkyellow
+call gitgutter#highlight#define_highlights()
 
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
@@ -127,8 +133,8 @@ nnoremap <leader><space> :noh<cr>
 set history=1000 " Store a ton of history (default is 20)
 set hidden       " allow buffer switching without saving"
 
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+" set list
+" set listchars=tab:>.,trail:.,extends:#,nbsp:.
 nmap <C-x> :call AsyncMake  # asynchronous compilation
 
 let g:ctrlp_lazy_update = 1
