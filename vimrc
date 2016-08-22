@@ -4,89 +4,93 @@ set guifont=PragmataPro:h18
 syntax on
 
 set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
+Plug 'gmarik/Vundle.vim'
 map <C-x><C-b> :BufExplorer<CR>
 " http://stackoverflow.com/questions/14635295/vim-takes-a-very-long-time-to-start-up
 set clipboard=exclude:.*
 
 " Color schemes and related plugins
-Plugin 'xolox/vim-misc'  " dependency for colorscheme-switcher
-Plugin 'xolox/vim-colorscheme-switcher'
-Plugin 'godlygeek/csapprox'
+Plug 'xolox/vim-misc'  " dependency for colorscheme-switcher
+Plug 'xolox/vim-colorscheme-switcher'
+Plug 'godlygeek/csapprox'
 " base16 never worked for me
 " Plugin 'chriskempson/base16-vim'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'itchyny/landscape.vim'
-Plugin 'moria'
+Plug 'nanotech/jellybeans.vim'
+Plug 'itchyny/landscape.vim'
+Plug 'moria'
 " Molokai fixes side effects
-Plugin 'tomasr/molokai'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'twerth/ir_black'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'jonathanfilip/vim-lucius'
+Plug 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
+Plug 'twerth/ir_black'
+Plug 'w0ng/vim-hybrid'
+Plug 'jonathanfilip/vim-lucius'
 
 " Good theme if not switching automagically
-let g:airline_theme = 'light'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-obsession'
-Plugin 'Lokaltog/vim-easymotion'
+" let g:airline_theme = 'light'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
+Plug 'Lokaltog/vim-easymotion'
 " emulate vim-sneak
 nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-" Plugin 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:pymode_rope_completion = 0
 let g:pymode_rope = 0
 let g:pymode_folding = 0
 " Plugin 'klen/python-mode.git'
-Plugin 'fisadev/vim-isort'
-Plugin 'fatih/vim-go'
-Plugin 'derekwyatt/vim-scala'
+Plug 'fisadev/vim-isort'
+Plug 'fatih/vim-go'
+Plug 'derekwyatt/vim-scala'
 " http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Quramy/tsuquyomi'
 
 " No real need for syntastic currently
 " Plugin 'scrooloose/syntastic.git'
-Plugin 'pthrasher/conqueterm-vim'
+Plug 'pthrasher/conqueterm-vim'
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
-Plugin 'xolox/vim-session'
+Plug 'xolox/vim-session'
 " Trying this out instead of vim-tabular
-Plugin 'junegunn/vim-easy-align'
-Plugin 'mileszs/ack.vim'
-Plugin 'rking/ag.vim'  " better ack/grep
-Plugin 'sjl/gundo.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'mileszs/ack.vim'
+Plug 'rking/ag.vim'  " better ack/grep
+Plug 'sjl/gundo.vim'
 let g:EasyClipEnableBlackHoleRedirect = 0
 let g:EasyClipUsePasteToggleDefaults = 0
 nmap <c-f> <plug>EasyClipSwapPasteForward
 nmap <c-d> <plug>EasyClipSwapPasteBackwards
-Plugin 'svermeulen/vim-easyclip'
-Plugin 'kien/ctrlp.vim'
-Plugin 'a.vim'
-Plugin 'bufkill.vim'
+Plug 'svermeulen/vim-easyclip'
+Plug 'kien/ctrlp.vim'
+Plug 'a.vim'
+Plug 'bufkill.vim'
 " Bracketed paste commented because does not play well with tmux
 " Plugin 'ConradIrwin/vim-bracketed-paste'
-Plugin 'tyru/vim-altercmd'  " allow remapping q
-Plugin 'ToQoz/gentle_quitman.vim'  " do not quit vim all the time
+Plug 'tyru/vim-altercmd'  " allow remapping q
+Plug 'ToQoz/gentle_quitman.vim'  " do not quit vim all the time
 
 "Beta
-Plugin 'terryma/vim-smooth-scroll'
+Plug 'terryma/vim-smooth-scroll'
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 20, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 20, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 20, 4)<CR>
 " http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
-Plugin 'Shougo/unite.vim'
-Plugin 'airblade/vim-gitgutter'
-call vundle#end()
+Plug 'Shougo/unite.vim'
+Plug 'airblade/vim-gitgutter'
+call plug#end()
 " http://robots.thoughtbot.com/faster-grepping-in-vim
 " bind leader * to grep word under cursor
 nmap <leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
