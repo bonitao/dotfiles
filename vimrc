@@ -82,6 +82,7 @@ Plug 'tyru/vim-altercmd'  " allow remapping q
 Plug 'ToQoz/gentle_quitman.vim'  " do not quit vim all the time
 
 "Beta
+Plug 'nathanaelkane/vim-indent-guides'  " use \ig to toggle
 Plug 'terryma/vim-smooth-scroll'
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 20, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
@@ -148,6 +149,10 @@ let g:ctrlp_cmd = 'CtrlPLastMode'
 let g:NERDSpaceDelims = 1
 so ~/.vimrc.local
 au BufRead,BufNewFile *.go set filetype=go
+" No tabs
+set shiftwidth=2 expandtab smarttab tabstop=4 softtabstop=4 list lcs=tab:\ \ 
+" For a manual tab insertion, go into paste mode
+set pastetoggle=<F3>
 autocmd FileType go setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2 list lcs=tab:\ \ 
 
 " No prompts.
