@@ -40,6 +40,7 @@ mkdir -p ~/.config/awesome
 cp -a config/awesome/rc.lua ~/.config/awesome/
 cp -a config/base16-shell ~/.config/base16-shell
 cp -a prompt_davi_setup ~/.zprezto/modules/prompt/functions/
+tic -x tmux.terminfo
 
 echo "Please delete backup $olddir and $olddir2 if everything is fine."
 echo "If you installed new fonts please run"
