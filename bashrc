@@ -6,7 +6,7 @@ fi
 export EDITOR=vim
 MACVIM=/Applications/MacVim.app/Contents/MacOS/Vim
 if [ -f $MACVIM ]; then
-   EDITOR=$MACVIM
+  EDITOR=$MACVIM
   alias vim=$MACVIM
   alias vi=$MACVIM
   alias vo="$MACVIM --servername VIM --remote"
