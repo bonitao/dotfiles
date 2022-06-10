@@ -72,6 +72,11 @@ lua require('lualine').setup { options = { theme = 'dracula' } }
 " bind leader * to grep word under cursor
 nmap <leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fs <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <leader>ft <cmd>Telescope treesitter<cr>
+
 " Requirements for vim powerline. Don't bother repeating.
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
