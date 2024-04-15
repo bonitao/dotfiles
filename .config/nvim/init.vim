@@ -66,7 +66,9 @@ Plug 'psliwka/vim-smoothie'
 call plug#end()
 
 " Set dracula theme for lualine
-lua require('lualine').setup { options = { theme = 'dracula' } }
+lua << END
+require('lualine').setup { options = { theme = 'dracula' } }
+END
 
 " http://robots.thoughtbot.com/faster-grepping-in-vim
 " bind leader * to grep word under cursor
