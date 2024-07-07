@@ -80,3 +80,5 @@ fi
 export EDITOR=nvim
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+# https://github.com/JanDeDobbeleer/oh-my-posh/issues/3430
+eval "$(oh-my-posh init bash |  sed 's|\[\[ -v MC_SID \]\]|[[ -n "$MC_SID" ]]|')"

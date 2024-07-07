@@ -1,5 +1,10 @@
 #!/bin/sh
-sudo apt install neovim
-sudo apt install fish
-sudo apt install ripgrep
-sudo apt install lsd
+if [[ $(uname -s) == CYGWIN* ]]; then
+	scoop install ripgrep lsd neovim
+	scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+else
+	if ! command -v pkgx &> /dev/null; then
+		eval "$(curl -Ssf https://pkgx.sh)"
+	fi
+	pkgx install crates.io/ripgrep crates.io/bat lsd neovim.io ohmyposh.dev
+fi
