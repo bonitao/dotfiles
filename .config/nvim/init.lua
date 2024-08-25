@@ -83,7 +83,8 @@ require('lazy').setup({
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({
-				ensure_installed = { "bash", "bibtex", "c", "cue", "cpp", "diff", "dockerfile", "earthfile", "go", "gomod", "gosum", "gowork", "html", "java", "javascript", "jq", "json", "just", "kotlin", "latex", "lua", "make", "markdown", "proto", "python", "rust", "sql", "starlark", "swift", "toml", "tsv", "typescript", "vue", "xml" },
+				ensure_installed = { "bash", "bibtex", "c", "cue", "cpp", "diff", "dockerfile", "earthfile", "go", "gomod", "gosum", "gowork", "html", "java", "jq", "json", "just", "kotlin", "lua", "make", "markdown", "proto", "python", "rust", "sql", "starlark", "toml", "tsv", "xml" },
+				-- latex requires node, hence not installed by default
 				sync_install = false,
 				highlight = { enable = true },
 				indent = { enable = true },
@@ -139,8 +140,8 @@ lsp_zero.on_attach(function(client, bufnr)
 	lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
---- if you want to know more about lsp-zero and mason.nvim
---- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
+-- if you want to know more about lsp-zero and mason.nvim
+-- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	handlers = {
@@ -148,7 +149,9 @@ require('mason-lspconfig').setup({
 			require('lspconfig')[server_name].setup({})
 		end,
 	},
-	ensure_installed = { "lua_ls", "rust_analyzer", "kotlin_language_server", "clangd", "dagger", "dockerls", "docker_compose_language_service", "earthlyls", "gopls", "gradle_ls", "html", "jsonls", "ruff", "sqls", "tsserver", "volar"  },
+	ensure_installed = { "lua_ls" },
+	-- enable more languages if you have npm and golang locally available
+	-- ensure_installed = { "lua_ls", "rust_analyzer", "kotlin_language_server", "clangd", "dagger", "dockerls", "docker_compose_language_service", "earthlyls", "gopls", "gradle_ls", "html", "jsonls", "ruff", "sqls", "tsserver", "volar"  },
 })
 
 -- https://lsp-zero.netlify.app/v3.x/tutorial.html
@@ -183,14 +186,6 @@ require('lspconfig').lua_ls.setup({
 	},
 	on_init = function(client)
 		local uv = vim.uv or vim.loop
-		local path = client.workspace_folders[1].name
-
-		-- Don't do anything if there is a project local config
-		if uv.fs_stat(path .. '/.luarc.json')
-			or uv.fs_stat(path .. '/.luarc.jsonc')
-		then
-			return
-		end
 
 		-- Apply neovim specific settings
 		local lua_opts = lsp_zero.nvim_lua_ls()
