@@ -1,0 +1,13 @@
+#!/bin/sh
+# curl https://i.jpillora.com/Crosse/font-install@v1.5.0! | bash
+# /usr/local/bin/font-install https://github.com/shytikov/pragmasevka/releases/download/v1.6.6/Pragmasevka_NF.zip
+if ! command -v pkgx >/dev/null 2>&1; then
+  if [ "$(uname)" == "Darwin" ]; then
+		brew install pkgxdev/made/pkgx
+  elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+   	eval "$(curl -Ssf https://pkgx.sh)"
+	fi
+fi
+command -v nu >/dev/null || pkgx install nushell.sh@0.96.1
+command -v just >/dev/null || pkgx install just.systems@1.29.1
+pkgx install rg fd fzf bat zoxide jq yq lsd duf hyperfine dive
