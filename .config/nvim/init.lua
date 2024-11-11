@@ -28,6 +28,8 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.laststatus = 3
 
+-- https://www.reddit.com/r/neovim/comments/14n6iiy/if_you_have_treesitter_make_sure_to_disable/
+vim.opt.smartindent = false
 -- avoid annoying jump from gitsigns
 vim.opt.signcolumn='yes:1'
 -- swap files are  super annoying and useless
@@ -65,6 +67,7 @@ require('lazy').setup({
 	{ 'tpope/vim-obsession' },
 	{ 'tpope/vim-eunuch' },
 	{ 'max397574/better-escape.nvim', config = true },
+	{ 'andymass/vim-matchup' },
 
 
 	--- git
@@ -83,12 +86,16 @@ require('lazy').setup({
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({
-				ensure_installed = { "bash", "bibtex", "c", "cue", "cpp", "diff", "dockerfile", "earthfile", "go", "gomod", "gosum", "gowork", "html", "java", "javascript", "jq", "json", "just", "kotlin", "latex", "lua", "make", "markdown", "proto", "python", "rust", "sql", "starlark", "swift", "toml", "tsv", "typescript", "vue", "xml" },
+				ensure_installed = { "bash", "bibtex", "c", "cue", "cpp", "diff", "dockerfile", "earthfile", "go", "gomod", "gosum", "gowork", "html", "java", "javascript", "jq", "json", "just", "kotlin", "latex", "lua", "make", "markdown", "nu", "proto", "python", "rust", "sql", "starlark", "swift", "toml", "tsv", "typescript", "vue", "xml" },
 				sync_install = false,
 				highlight = { enable = true },
 				indent = { enable = true },
 			})
-		end
+		end,
+		dependencies = {
+			-- NOTE: additional parser
+			{ "nushell/tree-sitter-nu" },
+		}
 	},
 	{ 'mcauley-penney/visual-whitespace.nvim', config = true },
 	{ 'lukas-reineke/indent-blankline.nvim' },
@@ -96,13 +103,19 @@ require('lazy').setup({
 
 	-- autocompletion
 	{'folke/tokyonight.nvim'},
+	{ "cappyzawa/trim.nvim" },
 	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 	{'williamboman/mason.nvim'},
 	{'williamboman/mason-lspconfig.nvim'},
 	{'neovim/nvim-lspconfig'},
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp'},
+	{'hrsh7th/cmp-nvim-lsp'},
+	{'hrsh7th/cmp-buffer'},
+  {'hrsh7th/cmp-path'},
 	{'L3MON4D3/LuaSnip'},
+  {'saadparwaiz1/cmp_luasnip'},
+  {'rafamadriz/friendly-snippets'},
 
 	-- linters
 	{ 'w0rp/ale', config = function() vim.g.ale_completion_enabled = 1 end },
@@ -133,7 +146,13 @@ vim.keymap.set("n", "<F1>", [[<Cmd>lua require"fzf-lua".help_tags()<CR>]], {})
 
 local lsp_zero = require('lsp-zero')
 
-lsp_zero.on_attach(function(client, bufnr)
+lsp_zero.extend_lspconfig({
+  sign_text = true,
+  float_border = 'rounded',
+  capabilities = require('cmp_nvim_lsp').default_capabilities()
+})
+
+lsp_zero.on_attach(function(_, bufnr)
 	-- see :help lsp-zero-keybindings
 	-- to learn the available actions
 	lsp_zero.default_keymaps({buffer = bufnr})
@@ -182,15 +201,6 @@ require('lspconfig').lua_ls.setup({
 		}
 	},
 	on_init = function(client)
-		local uv = vim.uv or vim.loop
-		local path = client.workspace_folders[1].name
-
-		-- Don't do anything if there is a project local config
-		if uv.fs_stat(path .. '/.luarc.json')
-			or uv.fs_stat(path .. '/.luarc.jsonc')
-		then
-			return
-		end
 
 		-- Apply neovim specific settings
 		local lua_opts = lsp_zero.nvim_lua_ls()
@@ -202,3 +212,6 @@ require('lspconfig').lua_ls.setup({
 		)
 	end,
 })
+
+local cmp = require('cmp')
+local cmp_action = lsp_zero.cmp_action()
