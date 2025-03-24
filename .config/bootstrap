@@ -1,6 +1,6 @@
 #!/bin/sh
-# curl https://i.jpillora.com/Crosse/font-install@v1.5.0! | bash
-# /usr/local/bin/font-install https://github.com/shytikov/pragmasevka/releases/download/v1.6.6/Pragmasevka_NF.zip
+curl https://i.jpillora.com/Crosse/font-install@v1.5.0! | bash
+/usr/local/bin/font-install https://github.com/shytikov/pragmasevka/releases/download/v1.6.6/Pragmasevka_NF.zip
 if ! command -v pkgx >/dev/null 2>&1; then
   if [ "$(uname)" == "Darwin" ]; then
 		brew install pkgxdev/made/pkgx
