@@ -42,5 +42,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 if ((BASH_VERSINFO[0] > 4)); then
   # https://github.com/JanDeDobbeleer/oh-my-posh/issues/3430
-  eval "$(oh-my-posh init bash |  sed 's|\[\[ -v MC_SID \]\]|[[ -n "$MC_SID" ]]|')"
+	eval "$(oh-my-posh init bash --config $(brew --prefix oh-my-posh)/themes/agnoster.omp.json | sed 's|\[\[ -v MC_SID \]\]|[[ -n "$MC_SID" ]]|')"
 fi
+which lsd >/dev/null 2>&1 && alias ls='lsd'
